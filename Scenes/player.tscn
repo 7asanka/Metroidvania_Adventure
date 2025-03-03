@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://3k55aifyk5wg"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_i5lu3"]
+[ext_resource type="Texture2D" uid="uid://chsjc5ltnqsod" path="res://Assets/platformer_metroidvania asset pack v1.01/herochar sprites(new)/herochar_idle_anim_strip_4.png" id="1_kp5ly"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jihmh"]
+atlas = ExtResource("1_kp5ly")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxb2i"]
+atlas = ExtResource("1_kp5ly")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ri8e"]
+atlas = ExtResource("1_kp5ly")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b78nx"]
+atlas = ExtResource("1_kp5ly")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_12ejq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jihmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxb2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ri8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b78nx")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_e73ru"]
+resource_name = "Idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mkrpo"]
+_data = {
+"Idle": SubResource("Animation_e73ru")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iv48v"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_i5lu3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_12ejq")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.179962
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mkrpo")
+}
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 5
+position = Vector2(-2, -10)
+shape = SubResource("CircleShape2D_iv48v")
