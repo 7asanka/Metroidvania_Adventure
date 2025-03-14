@@ -1,0 +1,336 @@
+[gd_scene load_steps=33 format=3 uid="uid://dp0udh7ap0oey"]
+
+[ext_resource type="Script" path="res://Scripts/MushEnemy/MushroomEnemy.gd" id="1_qw2rr"]
+[ext_resource type="Script" path="res://Scripts/MushEnemy/MushroomFSM.gd" id="2_junu8"]
+[ext_resource type="Script" path="res://Scripts/MushEnemy/MushPatrol.gd" id="3_d8quj"]
+[ext_resource type="Script" path="res://Scripts/MushEnemy/MushHurt.gd" id="4_j5l1t"]
+[ext_resource type="Texture2D" uid="uid://d01prfik7nxjy" path="res://Assets/platformer_metroidvania asset pack v1.01/enemies sprites/mushroom/mushroom_crushed_anim_strip_6.png" id="5_h2sng"]
+[ext_resource type="Texture2D" uid="uid://cbcoqw4vhcoua" path="res://Assets/platformer_metroidvania asset pack v1.01/enemies sprites/mushroom/mushroom_hit_anim_strip_3.png" id="5_k2k7b"]
+[ext_resource type="Texture2D" uid="uid://b1cmcc5nc38mu" path="res://Assets/platformer_metroidvania asset pack v1.01/enemies sprites/mushroom/mushroom_walk_anim_strip_8.png" id="6_pdlfr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o6e6k"]
+radius = 12.0
+height = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxalj"]
+size = Vector2(18, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j6bd"]
+atlas = ExtResource("5_h2sng")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awsjr"]
+atlas = ExtResource("5_h2sng")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef611"]
+atlas = ExtResource("5_h2sng")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1tkl"]
+atlas = ExtResource("5_h2sng")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgxij"]
+atlas = ExtResource("5_h2sng")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1rui"]
+atlas = ExtResource("5_h2sng")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov4a5"]
+atlas = ExtResource("5_k2k7b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3bug"]
+atlas = ExtResource("5_k2k7b")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u33ci"]
+atlas = ExtResource("5_k2k7b")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g6h8"]
+atlas = ExtResource("6_pdlfr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4gp6"]
+atlas = ExtResource("6_pdlfr")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uljok"]
+atlas = ExtResource("6_pdlfr")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8u56"]
+atlas = ExtResource("6_pdlfr")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejcuq"]
+atlas = ExtResource("6_pdlfr")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqa54"]
+atlas = ExtResource("6_pdlfr")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hskrk"]
+atlas = ExtResource("6_pdlfr")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh61e"]
+atlas = ExtResource("6_pdlfr")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jd0w7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j6bd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awsjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef611")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1tkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgxij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1rui")
+}],
+"loop": true,
+"name": &"MushCrushed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov4a5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3bug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u33ci")
+}],
+"loop": true,
+"name": &"MushHurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6g6h8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4gp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uljok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8u56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejcuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqa54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hskrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eh61e")
+}],
+"loop": true,
+"name": &"MushWalk",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_n624j"]
+resource_name = "MushCrushed"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"MushCrushed"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_ewy35"]
+resource_name = "MushHurt"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"MushHurt"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_i5plr"]
+resource_name = "MushWalk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"MushWalk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_7rsc3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"MushWalk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0pdde"]
+_data = {
+"MushCrushed": SubResource("Animation_n624j"),
+"MushHurt": SubResource("Animation_ewy35"),
+"MushWalk": SubResource("Animation_i5plr"),
+"RESET": SubResource("Animation_7rsc3")
+}
+
+[node name="MushEnemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 2
+script = ExtResource("1_qw2rr")
+
+[node name="MushFSM" type="Node" parent="."]
+script = ExtResource("2_junu8")
+
+[node name="MushPatrol" type="Node" parent="MushFSM"]
+script = ExtResource("3_d8quj")
+
+[node name="MushHurt" type="Node" parent="MushFSM"]
+script = ExtResource("4_j5l1t")
+
+[node name="MushCollider" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_o6e6k")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -12)
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+position = Vector2(0, -14)
+rotation = 3.14159
+shape = SubResource("RectangleShape2D_wxalj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_jd0w7")
+animation = &"MushWalk"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0pdde")
+}
+autoplay = "MushWalk"
+
+[node name="WallCheck2" type="RayCast2D" parent="."]
+position = Vector2(1, -14)
+target_position = Vector2(-30, 0)
+collision_mask = 8
+
+[node name="WallCheck" type="RayCast2D" parent="."]
+position = Vector2(1, -14)
+target_position = Vector2(30, 0)
+collision_mask = 8
+
+[node name="GroundCheck" type="RayCast2D" parent="."]
+position = Vector2(31, -14)
+target_position = Vector2(0, 30)
+collision_mask = 4
+
+[node name="GroundCheck2" type="RayCast2D" parent="."]
+position = Vector2(-28, -14)
+target_position = Vector2(0, 30)
+collision_mask = 4
+
+[connection signal="body_entered" from="Area2D" to="MushFSM/MushPatrol" method="_on_area_2d_body_entered"]
