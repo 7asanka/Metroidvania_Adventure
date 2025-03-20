@@ -12,3 +12,6 @@ func physics_update(_delta):
 		change_state("Jump")  # Switch to jumping
 	elif Input.is_action_just_pressed("melle_attack"):
 		change_state("MAttack")
+	
+	if object.velocity.y > 0:
+		change_state("Fall")

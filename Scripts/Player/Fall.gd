@@ -13,12 +13,14 @@ func physics_update(delta):
 	object.velocity.y += GRAVITY * delta  # Apply gravity
 
 	# Smooth air movement
-	var direction = 0
-	if Input.is_action_pressed("move_left"):
-		direction = -1
-	elif Input.is_action_pressed("move_right"):
-		direction = 1
-
+	var direction = Input.get_axis("move_left", "move_right")
+	if direction < 0 :	
+		object.get_node("AnimatedSprite2D").flip_h = true
+		object.swordHitbox.position = Vector2(-19.5, -15)
+	elif direction > 0:
+		object.get_node("AnimatedSprite2D").flip_h = false
+		object.swordHitbox.position = Vector2(19.5, -15)
+		
 	object.velocity.x = move_toward(object.velocity.x, direction * MAX_AIR_SPEED, AIR_ACCELERATION * delta)
 	object.move_and_slide()
 
@@ -28,3 +30,9 @@ func physics_update(delta):
 			change_state("Idle")
 		else:
 			change_state("Running")
+	
+	if Input.is_action_just_pressed("jump") and object.has_double_jumped == false and object.can_double_jump:
+		change_state("Jump")
+		
+	if object.is_on_floor():
+		object.has_double_jumped = false

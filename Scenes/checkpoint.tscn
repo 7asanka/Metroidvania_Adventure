@@ -1,0 +1,254 @@
+[gd_scene load_steps=26 format=3 uid="uid://fk6jf8xqgbq"]
+
+[ext_resource type="Script" path="res://Scripts/Checkpoint/Checkpoint.gd" id="1_xegvk"]
+[ext_resource type="Texture2D" uid="uid://cxka2sdi05je4" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/save_point_anim_strip_9.png" id="2_05445"]
+[ext_resource type="Texture2D" uid="uid://driycyiu8lkau" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/save_point_saving_anim_strip_3.png" id="2_tb3h3"]
+[ext_resource type="Texture2D" uid="uid://btwccdghd83as" path="res://Assets/Fonts/Keyboard Letters and Symbols.png" id="4_8rxf0"]
+[ext_resource type="FontFile" uid="uid://v81wtajbxx2u" path="res://Assets/Fonts/minecraft/Minecraft.ttf" id="5_d4tpe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_135h4"]
+radius = 15.0083
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecifb"]
+atlas = ExtResource("2_05445")
+region = Rect2(0, 0, 12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndbiq"]
+atlas = ExtResource("2_05445")
+region = Rect2(12, 0, 12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpi2o"]
+atlas = ExtResource("2_05445")
+region = Rect2(24, 0, 12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2004t"]
+atlas = ExtResource("2_05445")
+region = Rect2(36, 0, 12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkn4v"]
+atlas = ExtResource("2_05445")
+region = Rect2(48, 0, 12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7tiv"]
+atlas = ExtResource("2_05445")
+region = Rect2(60, 0, 12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t133"]
+atlas = ExtResource("2_05445")
+region = Rect2(72, 0, 12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd7oj"]
+atlas = ExtResource("2_05445")
+region = Rect2(84, 0, 12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4nys"]
+atlas = ExtResource("2_05445")
+region = Rect2(96, 0, 12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eknnt"]
+atlas = ExtResource("2_tb3h3")
+region = Rect2(0, 0, 12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crm6t"]
+atlas = ExtResource("2_tb3h3")
+region = Rect2(12, 0, 12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ocsj"]
+atlas = ExtResource("2_tb3h3")
+region = Rect2(24, 0, 12, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w04qr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecifb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndbiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpi2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2004t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkn4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7tiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3t133")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd7oj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4nys")
+}],
+"loop": true,
+"name": &"NewSave",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eknnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crm6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ocsj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_qgj2i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_hqob3"]
+resource_name = "default"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+
+[sub_resource type="Animation" id="Animation_q7bjq"]
+resource_name = "newSave"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"NewSave"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5i6t3"]
+_data = {
+"RESET": SubResource("Animation_qgj2i"),
+"default": SubResource("Animation_hqob3"),
+"newSave": SubResource("Animation_q7bjq")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew2xc"]
+atlas = ExtResource("4_8rxf0")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y588i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew2xc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Checkpoint" type="Area2D" groups=["checkpoints"]]
+script = ExtResource("1_xegvk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_135h4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_w04qr")
+autoplay = "default"
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5i6t3")
+}
+autoplay = "default"
+
+[node name="EKeySprite" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0.25, -61.25)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_y588i")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -49.0
+offset_top = -116.0
+offset_right = 50.0
+offset_bottom = -80.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_d4tpe")
+text = "checkpoint 
+activated"
+horizontal_alignment = 1
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

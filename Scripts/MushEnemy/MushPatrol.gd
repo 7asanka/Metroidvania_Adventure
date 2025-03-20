@@ -30,8 +30,7 @@ func physics_update(delta):
 	object.velocity.x = direction * SPEED
 	object.move_and_slide()
 
-# Only trigger hurt state if colliding with player
-func _on_area_2d_body_entered(body):
+func _on_hurt_box_body_entered(body):
 	if body.is_in_group("player"):
-		body.velocity.y = -300
-		change_state("MushHurt")
+		print("enemy hit player")
+		body.take_damage(1)

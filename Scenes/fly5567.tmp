@@ -1,0 +1,324 @@
+[gd_scene load_steps=32 format=3 uid="uid://kpyjxdbpy840"]
+
+[ext_resource type="Script" path="res://Scripts/FlyEnemy/fly.gd" id="1_eu0nx"]
+[ext_resource type="Script" path="res://Scripts/FlyEnemy/BFlyFSM.gd" id="1_sjpn8"]
+[ext_resource type="Texture2D" uid="uid://b4otd5upmhv1u" path="res://Assets/platformer_metroidvania asset pack v1.01/enemies sprites/fly/blue_fly_attack_anim_srip_3.png" id="2_lfe2v"]
+[ext_resource type="Script" path="res://Scripts/FlyEnemy/BFlyPatrol.gd" id="3_h4eno"]
+[ext_resource type="Texture2D" uid="uid://i4wylanwaww8" path="res://Assets/platformer_metroidvania asset pack v1.01/enemies sprites/fly/blue_fly_death_anim_strip_5.png" id="3_n7m4i"]
+[ext_resource type="Texture2D" uid="uid://3serc3tp4xdb" path="res://Assets/platformer_metroidvania asset pack v1.01/enemies sprites/fly/blue_fly_hit_anim_strip_3.png" id="4_4hsp1"]
+[ext_resource type="Script" path="res://Scripts/FlyEnemy/BFlyAttack.gd" id="4_x6q6h"]
+[ext_resource type="Texture2D" uid="uid://jdtdan0yghk7" path="res://Assets/platformer_metroidvania asset pack v1.01/enemies sprites/fly/blue_fly_idle_or_flying_anim_strip_3.png" id="5_aa5fo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2lj37"]
+radius = 9.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8tm5"]
+atlas = ExtResource("2_lfe2v")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sop1a"]
+atlas = ExtResource("2_lfe2v")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3dty"]
+atlas = ExtResource("2_lfe2v")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljqs2"]
+atlas = ExtResource("3_n7m4i")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ouex"]
+atlas = ExtResource("3_n7m4i")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngmia"]
+atlas = ExtResource("3_n7m4i")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4w4p"]
+atlas = ExtResource("3_n7m4i")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81wv6"]
+atlas = ExtResource("3_n7m4i")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mklu"]
+atlas = ExtResource("4_4hsp1")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un2ro"]
+atlas = ExtResource("4_4hsp1")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlpq6"]
+atlas = ExtResource("4_4hsp1")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hwpd"]
+atlas = ExtResource("5_aa5fo")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jowmy"]
+atlas = ExtResource("5_aa5fo")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unvsq"]
+atlas = ExtResource("5_aa5fo")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_85y6f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8tm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sop1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3dty")
+}],
+"loop": true,
+"name": &"BFlyAttack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljqs2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ouex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngmia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4w4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81wv6")
+}],
+"loop": true,
+"name": &"BFlyDeath",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mklu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un2ro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlpq6")
+}],
+"loop": false,
+"name": &"BFlyHurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hwpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jowmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unvsq")
+}],
+"loop": true,
+"name": &"BFlyPatrol",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_5580x"]
+resource_name = "BFlyAttack"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"BFlyAttack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_ee3bw"]
+resource_name = "BFlyDeath"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"BFlyDeath"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_tei8d"]
+resource_name = "BFlyHurt"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"BFlyHurt"]
+}
+
+[sub_resource type="Animation" id="Animation_quce8"]
+resource_name = "BFlyPatrol"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"BFlyPatrol"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_r8fwu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"BFlyAttack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1uywh"]
+_data = {
+"BFlyAttack": SubResource("Animation_5580x"),
+"BFlyDeath": SubResource("Animation_ee3bw"),
+"BFlyHurt": SubResource("Animation_tei8d"),
+"BFlyPatrol": SubResource("Animation_quce8"),
+"RESET": SubResource("Animation_r8fwu")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ucr03"]
+radius = 67.1193
+
+[node name="Fly" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_eu0nx")
+
+[node name="BFlyFSM" type="Node" parent="."]
+script = ExtResource("1_sjpn8")
+
+[node name="BFlyPatrol" type="Node" parent="BFlyFSM"]
+script = ExtResource("3_h4eno")
+
+[node name="BFlyAttack" type="Node" parent="BFlyFSM"]
+script = ExtResource("4_x6q6h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2lj37")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_85y6f")
+animation = &"BFlyAttack"
+autoplay = "BFlyPatrol"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1uywh")
+}
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource("CircleShape2D_ucr03")
+
+[connection signal="body_entered" from="PlayerDetection" to="BFlyFSM/BFlyPatrol" method="_on_player_detection_body_entered"]
+[connection signal="body_entered" from="PlayerDetection" to="BFlyFSM/BFlyAttack" method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="BFlyFSM/BFlyAttack" method="_on_player_detection_body_exited"]

@@ -1,19 +1,40 @@
-[gd_scene load_steps=33 format=3 uid="uid://dp0udh7ap0oey"]
+[gd_scene load_steps=41 format=3 uid="uid://dp0udh7ap0oey"]
 
 [ext_resource type="Script" path="res://Scripts/MushEnemy/MushroomEnemy.gd" id="1_qw2rr"]
 [ext_resource type="Script" path="res://Scripts/MushEnemy/MushroomFSM.gd" id="2_junu8"]
 [ext_resource type="Script" path="res://Scripts/MushEnemy/MushPatrol.gd" id="3_d8quj"]
 [ext_resource type="Script" path="res://Scripts/MushEnemy/MushHurt.gd" id="4_j5l1t"]
+[ext_resource type="Texture2D" uid="uid://cuirdt8byifre" path="res://Assets/platformer_metroidvania asset pack v1.01/enemies sprites/mushroom/mushroom_death_anim_strip_6.png" id="5_204g6"]
 [ext_resource type="Texture2D" uid="uid://d01prfik7nxjy" path="res://Assets/platformer_metroidvania asset pack v1.01/enemies sprites/mushroom/mushroom_crushed_anim_strip_6.png" id="5_h2sng"]
 [ext_resource type="Texture2D" uid="uid://cbcoqw4vhcoua" path="res://Assets/platformer_metroidvania asset pack v1.01/enemies sprites/mushroom/mushroom_hit_anim_strip_3.png" id="5_k2k7b"]
 [ext_resource type="Texture2D" uid="uid://b1cmcc5nc38mu" path="res://Assets/platformer_metroidvania asset pack v1.01/enemies sprites/mushroom/mushroom_walk_anim_strip_8.png" id="6_pdlfr"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o6e6k"]
-radius = 12.0
-height = 24.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_37lm2"]
+radius = 8.06226
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxalj"]
-size = Vector2(18, 12)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu2vt"]
+atlas = ExtResource("5_204g6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pyr0"]
+atlas = ExtResource("5_204g6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhdhi"]
+atlas = ExtResource("5_204g6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oeg2"]
+atlas = ExtResource("5_204g6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr1ux"]
+atlas = ExtResource("5_204g6")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84dbg"]
+atlas = ExtResource("5_204g6")
+region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4j6bd"]
 atlas = ExtResource("5_h2sng")
@@ -87,6 +108,29 @@ region = Rect2(112, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_hu2vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pyr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhdhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7oeg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr1ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84dbg")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_4j6bd")
 }, {
 "duration": 1.0,
@@ -151,6 +195,34 @@ animations = [{
 "name": &"MushWalk",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_luj5m"]
+resource_name = "Death"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
 
 [sub_resource type="Animation" id="Animation_n624j"]
 resource_name = "MushCrushed"
@@ -266,11 +338,15 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0pdde"]
 _data = {
+"Death": SubResource("Animation_luj5m"),
 "MushCrushed": SubResource("Animation_n624j"),
 "MushHurt": SubResource("Animation_ewy35"),
 "MushWalk": SubResource("Animation_i5plr"),
 "RESET": SubResource("Animation_7rsc3")
 }
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xqtj8"]
+radius = 12.0
 
 [node name="MushEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
@@ -287,19 +363,8 @@ script = ExtResource("4_j5l1t")
 
 [node name="MushCollider" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(0, -12)
-shape = SubResource("CapsuleShape2D_o6e6k")
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(0, -12)
-collision_layer = 0
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-z_index = 1
-position = Vector2(0, -14)
-rotation = 3.14159
-shape = SubResource("RectangleShape2D_wxalj")
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_37lm2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
@@ -333,4 +398,10 @@ position = Vector2(-28, -14)
 target_position = Vector2(0, 30)
 collision_mask = 4
 
-[connection signal="body_entered" from="Area2D" to="MushFSM/MushPatrol" method="_on_area_2d_body_entered"]
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_xqtj8")
+
+[connection signal="body_entered" from="HurtBox" to="MushFSM/MushPatrol" method="_on_hurt_box_body_entered"]
