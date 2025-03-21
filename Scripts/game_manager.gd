@@ -2,6 +2,7 @@ extends Node
 
 var player = null  # Store a reference to the player
 var last_checkpoint
+var save_path = "user://savegame.json"
 
 var save_data = {
 	"checkpoint": null,
@@ -39,28 +40,71 @@ func save_game():
 	print("Game saved:", save_data)
 
 func load_game():
-	if FileAccess.file_exists("user://savegame.json"):
-		var file = FileAccess.open("user://savegame.json", FileAccess.READ)
-		save_data = JSON.parse_string(file.get_as_text())
+	if FileAccess.file_exists(save_path):
+		var file = FileAccess.open(save_path, FileAccess.READ)
+		save_data = JSON.parse_string(file.get_as_text())  
 		file.close()
-		print("Game loaded:", save_data)
-		
-		if save_data:
-			print("✅ Game data loaded:", save_data)  # Debug print
-		else:
-			print("⚠ Error: Save file exists but could not be parsed!")
-	else:
-		print("⚠ No save file found, starting fresh.")
 
-		# Restore Player Data
-		if player:
-			player.can_double_jump = save_data["player"].get("can_double_jump", false)
-			player.max_health = save_data["player"].get("max_health", 3)
-			player.health = player.max_health  # Restore full health
-			player.global_position = Vector2(save_data["position"][0], save_data["position"][1])
-			player.health_changed.emit(player.health)
-			print("Player data restored:", save_data["player"])
-			
+		# Ensure all necessary keys exist
+		if "player" not in save_data:
+			save_data["player"] = {"max_health": 3, "can_double_jump": false}
+
+		if "chests" not in save_data:
+			save_data["chests"] = {}
+
+		if "enemy_positions" not in save_data:
+			save_data["enemy_positions"] = {}
+
+		# 🔥 Fix: Ensure 'position' exists and is loaded correctly
+		if "position" in save_data and typeof(save_data["position"]) == TYPE_ARRAY and save_data["position"].size() == 2:
+			player.last_checkpoint = Vector2(save_data["position"][0], save_data["position"][1])
+			player.global_position = player.last_checkpoint  # Move player to the saved checkpoint
+		else:
+			print("Warning: No checkpoint position found in save file. Using default spawn.")
+
+		# Load player stats
+		player.max_health = save_data["player"].get("max_health", 3)
+		player.can_double_jump = save_data["player"].get("can_double_jump", false)
+		player.health = player.max_health
+		player.health_changed.emit(player.health)
+
+		# Load chests
+		for chest in get_tree().get_nodes_in_group("chests"):
+			if chest.chest_id in save_data["chests"]:
+				chest.is_open = save_data["chests"][chest.chest_id]
+				if chest.is_open:
+					chest.animated_sprite_2d.play("Open")
+					chest.collision_shape_2d.queue_free()
+
+		# Load enemy positions
+		for enemy in get_tree().get_nodes_in_group("enemy"):
+			if enemy.enemy_id in save_data["enemy_positions"]:
+				enemy.global_position = Vector2(save_data["enemy_positions"][enemy.enemy_id][0], save_data["enemy_positions"][enemy.enemy_id][1])
+
+		print("Game loaded successfully:", save_data)  # Debug print
+	else:
+		print("No save file found. Starting new game.")
+		save_data = {
+			"player": {"max_health": 3, "can_double_jump": false},
+			"position": [0, 0],  # Default spawn
+			"chests": {},
+			"enemy_positions": {}
+		}
+
+func has_save():
+	return FileAccess.file_exists("user://savegame.json")
+
+func new_game():
+	# Reset save data
+	save_data = {
+		"checkpoint": null,
+		"position": [0, 0],  
+		"player": { "max_health": 3, "can_double_jump": false },
+		"chests": {},  
+		"enemies": {}
+	}
+	save_game()
+
 func respawn_player():
 	if player:
 		player.respawn()
