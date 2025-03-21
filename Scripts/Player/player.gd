@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -13,29 +12,31 @@ var can_double_jump = false
 var has_double_jumped = false
 
 signal health_changed(new_health)
+signal respawn_requested
+
 @onready var anim = $AnimationPlayer
 @onready var fsm = $FSM
 @onready var MAttack_anim = $MAttackHitbox/AnimationPlayer
-@onready var swordHitbox = $MAttackHitbox/CollisionShape2D #Swords hitbox
+@onready var swordHitbox = $MAttackHitbox/CollisionShape2D # Sword hitbox
 @onready var MAttackSprite = $MAttackHitbox/CollisionShape2D/AnimatedSprite2D
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	fsm.change_state("Idle")
 	add_to_group("player")
+	load_player_data()
 
 func _process(delta):
 	fsm.update(delta)
+	
 	if Input.is_action_just_pressed("melle_attack"):
 		fsm.change_state("MAttack")
 	
 	if health <= 0:
-		get_tree().reload_current_scene()
-	
+		respawn_requested.emit()
+
 func _physics_process(delta):
-	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
@@ -56,49 +57,44 @@ func take_damage(value):
 	health_changed.emit(health)
 	has_double_jumped = false  # Reset double jump when hit
 	fsm.change_state("Hurt")
-	print("Player took damage! Health:", health)
-
-	#if health <= 0:
-		#print("Player died! Respawning...")
-		#respawn()
-
 
 func respawn():
-	if last_checkpoint != Vector2.ZERO:
-		global_position = last_checkpoint  # Move the player to the last checkpoint
-		print("Respawning player at:", last_checkpoint)
+	# ✅ Use GameManager’s last checkpoint position when respawning
+	if GameManager.last_checkpoint != Vector2.ZERO:
+		global_position = GameManager.last_checkpoint
+		print("✅ Respawning at last checkpoint:", GameManager.last_checkpoint)
 	else:
-		print("No checkpoint found, respawning at default position.")
+		print("⚠ No checkpoint found, respawning at default position.")
 
 	health = max_health  # Restore full health
 	health_changed.emit(health)
 
-	# Reset enemies
-	var level = get_tree().current_scene
-	if level.has_method("reset_enemies"):
-		level.reset_enemies()
-
 func save_checkpoint(id, position):
-	# Load existing save data
-	var save_data = load_save_data()
+	last_checkpoint = position
+	GameManager.player_data = {
+		"max_health": max_health,
+		"can_double_jump": can_double_jump,
+		"position": position
+	}
+	GameManager.save_game()
+	print("Checkpoint saved at:", position)
 
-	# Update only the checkpoint-related data
-	save_data["checkpoint"] = id
-	save_data["position"] = [position.x, position.y]
-	save_data["can_double_jump"] = can_double_jump
+func load_player_data():
+	var data = GameManager.save_data
+	print("🔄 Loading player data:", data)  # Debug print
 
-	# Save back to file without removing chest data
-	var file = FileAccess.open("user://savegame.json", FileAccess.WRITE)
-	file.store_string(JSON.stringify(save_data))
-	file.close()
+	if "position" in data and data["position"].size() == 2:
+		last_checkpoint = Vector2(data["position"][0], data["position"][1])  
+		global_position = last_checkpoint  # ✅ Spawn at last saved checkpoint
+		print("✅ Player spawned at:", last_checkpoint)
+	else:
+		print("⚠ No checkpoint position found, spawning at default position.")
 
-	print("Checkpoint saved! Current save data:", save_data)  # Debug
+	# ✅ Ensure health & abilities are loaded too
+	max_health = data.get("player", {}).get("max_health", 3)
+	can_double_jump = data.get("player", {}).get("can_double_jump", false)
+	health = max_health
+	health_changed.emit(health)
 
-func load_save_data():
-	if FileAccess.file_exists("user://savegame.json"):
-		var file = FileAccess.open("user://savegame.json", FileAccess.READ)
-		var save_data = JSON.parse_string(file.get_as_text())
-		file.close()
-		if save_data:
-			return save_data
-	return {}  # Return empty dictionary if file doesn’t exist or is empty
+	# ✅ Update last checkpoint in GameManager
+	GameManager.last_checkpoint = last_checkpoint

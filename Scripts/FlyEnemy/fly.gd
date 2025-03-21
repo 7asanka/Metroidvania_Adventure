@@ -6,6 +6,8 @@ var direction
 var player
 var chasing = false
 
+@export var enemy_id: String  # Unique ID for each enemy
+
 @onready var b_fly_anim = $AnimationPlayer
 @onready var b_fly_sprite = $AnimatedSprite2D
 @onready var b_fly_fsm = $BFlyFSM

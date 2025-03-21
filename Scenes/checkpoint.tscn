@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cxka2sdi05je4" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/save_point_anim_strip_9.png" id="2_05445"]
 [ext_resource type="Texture2D" uid="uid://driycyiu8lkau" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/save_point_saving_anim_strip_3.png" id="2_tb3h3"]
 [ext_resource type="Texture2D" uid="uid://btwccdghd83as" path="res://Assets/Fonts/Keyboard Letters and Symbols.png" id="4_8rxf0"]
-[ext_resource type="FontFile" uid="uid://v81wtajbxx2u" path="res://Assets/Fonts/minecraft/Minecraft.ttf" id="5_d4tpe"]
+[ext_resource type="FontFile" uid="uid://bojj2b2ar2ljw" path="res://Assets/Fonts/Mystery Font.ttf" id="5_iiil0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_135h4"]
 radius = 15.0083
@@ -88,7 +88,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_q4nys")
 }],
 "loop": true,
-"name": &"NewSave",
+"name": &"default",
 "speed": 5.0
 }, {
 "frames": [{
@@ -101,8 +101,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4ocsj")
 }],
-"loop": true,
-"name": &"default",
+"loop": false,
+"name": &"newSave",
 "speed": 5.0
 }]
 
@@ -134,9 +134,8 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_hqob3"]
-resource_name = "default"
+resource_name = "newSave"
 length = 0.3
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -147,7 +146,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [1, 2, 2]
+"values": [0, 1, 2]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -159,11 +158,11 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"default"]
+"values": [&"newSave"]
 }
 
 [sub_resource type="Animation" id="Animation_q7bjq"]
-resource_name = "newSave"
+resource_name = "default"
 length = 0.9
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -187,14 +186,14 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"NewSave"]
+"values": [&"default"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5i6t3"]
 _data = {
 "RESET": SubResource("Animation_qgj2i"),
-"default": SubResource("Animation_hqob3"),
-"newSave": SubResource("Animation_q7bjq")
+"default": SubResource("Animation_q7bjq"),
+"newSave": SubResource("Animation_hqob3")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ew2xc"]
@@ -242,13 +241,14 @@ visible = false
 offset_left = -49.0
 offset_top = -116.0
 offset_right = 50.0
-offset_bottom = -80.0
+offset_bottom = -67.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("5_d4tpe")
+theme_override_fonts/font = ExtResource("5_iiil0")
 text = "checkpoint 
 activated"
 horizontal_alignment = 1
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

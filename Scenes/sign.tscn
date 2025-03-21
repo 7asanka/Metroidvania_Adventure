@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://jrk1wn5t013y"]
+
+[ext_resource type="Script" path="res://Scripts/Sign/sign.gd" id="1_3y78n"]
+[ext_resource type="Texture2D" uid="uid://joj78t6w0co6" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/wooden_plate.png" id="1_ivei3"]
+[ext_resource type="FontFile" uid="uid://bojj2b2ar2ljw" path="res://Assets/Fonts/Mystery Font.ttf" id="3_17l26"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nbktc"]
+radius = 64.195
+
+[node name="Sign" type="Area2D"]
+script = ExtResource("1_3y78n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nbktc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_ivei3")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -61.0
+offset_top = -71.0
+offset_right = 60.0
+offset_bottom = -43.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 12
+theme_override_fonts/font = ExtResource("3_17l26")
+theme_override_font_sizes/font_size = 8
+text = "PLACE HOLDER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Chest/Chest.gd" id="1_sbpox"]
 [ext_resource type="Texture2D" uid="uid://8wiwyhf60hti" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/loot_box_anim_strip_12.png" id="2_n7cwc"]
 [ext_resource type="Texture2D" uid="uid://cp5gmpbn6855c" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/loot_box_anim_opening_strip_6.png" id="3_qowrh"]
-[ext_resource type="FontFile" uid="uid://v81wtajbxx2u" path="res://Assets/Fonts/minecraft/Minecraft.ttf" id="4_hesyh"]
+[ext_resource type="FontFile" uid="uid://bojj2b2ar2ljw" path="res://Assets/Fonts/Mystery Font.ttf" id="4_2schv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g7dmd"]
 atlas = ExtResource("2_n7cwc")
@@ -162,7 +162,6 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_hacr4")
 
 [node name="Label" type="Label" parent="."]
-visible = false
 offset_left = -49.0
 offset_top = -75.0
 offset_right = 50.0
@@ -170,7 +169,7 @@ offset_bottom = -40.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("4_hesyh")
+theme_override_fonts/font = ExtResource("4_2schv")
 text = "Double Jump
 Aquired"
 horizontal_alignment = 1

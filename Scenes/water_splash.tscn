@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd0c8llrxri83"]
+
+[ext_resource type="Texture2D" uid="uid://cbd631eudc1g7" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/waterfall_bottom_anim_strip_4.png" id="1_q0hmf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu3dh"]
+atlas = ExtResource("1_q0hmf")
+region = Rect2(0, 0, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_piki6"]
+atlas = ExtResource("1_q0hmf")
+region = Rect2(16, 0, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_peddv"]
+atlas = ExtResource("1_q0hmf")
+region = Rect2(32, 0, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5oux"]
+atlas = ExtResource("1_q0hmf")
+region = Rect2(48, 0, 16, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_71dul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu3dh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piki6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peddv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5oux")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WaterSplash" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_71dul")
+autoplay = "default"

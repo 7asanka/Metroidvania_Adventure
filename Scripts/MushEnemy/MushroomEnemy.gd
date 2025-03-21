@@ -3,6 +3,8 @@ extends CharacterBody2D
 var health = 3
 var max_health = 3
 
+@export var enemy_id: String  # Unique ID for each enemy
+
 @onready var mush_anim = $AnimationPlayer
 @onready var fsm = $MushFSM
 @onready var anim = $AnimationPlayer
