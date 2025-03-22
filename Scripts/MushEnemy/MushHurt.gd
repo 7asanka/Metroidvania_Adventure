@@ -6,7 +6,7 @@ var timer = 0
 
 func enter():
 	object.velocity = Vector2.ZERO  # Stop movement
-	object.anim.play("MushHurt")  # Play hurt animation (if exists)
+	object.mush_anim.play("MushHurt")  # Play hurt animation (if exists)
 	object.health -= 1
 	print("Hurt state entered")
 	timer = HURT_DURATION

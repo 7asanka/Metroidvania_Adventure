@@ -2,17 +2,20 @@ extends CharacterBody2D
 
 var health = 2
 var max_health = 2
-var direction
-var player
 var chasing = false
-
-@export var enemy_id: String  # Unique ID for each enemy
+@export var enemy_id: String  
 
 @onready var b_fly_anim = $AnimationPlayer
 @onready var b_fly_sprite = $AnimatedSprite2D
 @onready var b_fly_fsm = $BFlyFSM
 
 func _ready():
+	# Restore enemy position if needed
+	if SaveManager.enemies.has(enemy_id):
+		global_position = SaveManager.enemies[enemy_id]
+	else:
+		SaveManager.enemies[enemy_id] = global_position
+
 	b_fly_fsm.change_state("BFlyPatrol")
 	
 func _process(delta):
@@ -36,4 +39,3 @@ func take_damage(damage):
 func reset():
 	b_fly_fsm.change_state("BFlyPatrol")
 	health = max_health
-	

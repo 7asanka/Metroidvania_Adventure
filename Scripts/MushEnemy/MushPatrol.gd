@@ -10,7 +10,7 @@ var direction = -1  # Start moving left
 @onready var ground_check_2 = $"../../GroundCheck2"
 
 func enter():
-	object.anim.play("MushWalk")
+	object.mush_anim.play("MushWalk")
 
 func update(delta):
 	# Check for walls or missing ground

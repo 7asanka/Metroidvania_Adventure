@@ -1,12 +1,9 @@
 extends Area2D
 
-@export var checkpoint_id: String  # Unique identifier for this checkpoint
-@onready var animated_sprite_2d = $AnimatedSprite2D
+@export var checkpoint_id: String
 @onready var anim = $AnimationPlayer
 @onready var e_key_sprite = $EKeySprite
 @onready var label = $Label
-
-signal checkpoint_reached(id: String, position: Vector2)  # ✅ Ensure signal is defined
 
 var can_check = false
 var player = null
@@ -27,8 +24,8 @@ func _on_body_entered(body):
 		player = body
 
 func use_checkpoint():
-	if player:  
-		GameManager.save_checkpoint(checkpoint_id, global_position)  # ✅ Save to GameManager
+	if player:
+		player.save_checkpoint(global_position)
 		anim.play("newSave")
 		label.visible = true
 		player.health = player.max_health

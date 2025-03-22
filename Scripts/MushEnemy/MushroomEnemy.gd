@@ -3,16 +3,20 @@ extends CharacterBody2D
 var health = 3
 var max_health = 3
 
-@export var enemy_id: String  # Unique ID for each enemy
+@export var enemy_id: String  
 
 @onready var mush_anim = $AnimationPlayer
 @onready var fsm = $MushFSM
-@onready var anim = $AnimationPlayer
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
+	# Restore enemy position if needed
+	if SaveManager.enemies.has(enemy_id):
+		global_position = SaveManager.enemies[enemy_id]
+	else:
+		SaveManager.enemies[enemy_id] = global_position
+
 	fsm.change_state("MushPatrol")
 
 func _process(delta):
@@ -33,6 +37,5 @@ func take_damage(damage):
 	fsm.change_state("MushHurt")
 
 func reset():
-	fsm.change_state("MushPatrol")# Restore enemy to its default state
-	health = max_health  # Reset enemy health if applicable
-	# Reset animations, AI states, etc.
+	fsm.change_state("MushPatrol")
+	health = max_health

@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Metroidvania adventure"
-run/main_scene="res://main.tscn"
+run/main_scene="res://Scenes/title_screen.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameManager="*res://Scripts/game_manager.gd"
+SaveManager="*res://Scripts/SaveManager.gd"
 
 [dotnet]
 

@@ -12,8 +12,8 @@ var is_open = false
 func _ready():
 	label.visible = false
 	label.text = label.text.to_upper()
-	# Load chest state from GameManager
-	is_open = GameManager.save_data["chests"].get(chest_id, false)
+	# Load chest state from SaveManager
+	is_open = SaveManager.chests.get(chest_id, false)
 
 	# If chest was opened before, set it to open state
 	if is_open:
@@ -34,13 +34,13 @@ func open_chest(player):
 	# Grant ability if it's a double jump chest
 	if ability_name == "double_jump":
 		player.can_double_jump = true
-		GameManager.save_data["player"]["can_double_jump"] = true
+		SaveManager.player_data["can_double_jump"] = true
 
 	collision_shape_2d.queue_free()
 
-	# Save chest state in GameManager
-	GameManager.save_data[chest_id] = true
-	GameManager.save_game()
+	# Save chest state in SaveManager
+	SaveManager.chests[chest_id] = true
+	SaveManager.save_game()
 
 	await get_tree().create_timer(3).timeout
 	label.visible = false
