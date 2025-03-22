@@ -14,7 +14,7 @@ func enter():
 func physics_update(delta):
 	if object.global_position.distance_to(target_position) < 10:  # Close enough to target
 		pick_new_target()
-
+	
 	# Move towards target
 	object.velocity = (target_position - object.global_position).normalized() * patrol_speed
 	object.move_and_slide()

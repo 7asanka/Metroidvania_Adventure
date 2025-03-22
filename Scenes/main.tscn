@@ -291,7 +291,7 @@ position = Vector2(1934, 45)
 enemy_id = "4"
 
 [node name="Fly2" parent="." instance=ExtResource("16_d86ko")]
-position = Vector2(2196, -12)
+position = Vector2(2163, 5)
 enemy_id = "5"
 
 [node name="MushEnemy4" parent="." instance=ExtResource("7_e4mlt")]

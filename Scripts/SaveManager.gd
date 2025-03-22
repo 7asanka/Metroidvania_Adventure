@@ -47,4 +47,9 @@ func respawn_player():
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
 		player.respawn()
+		reset_enemies()
+
+func reset_enemies():
+	for enemy in get_tree().get_nodes_in_group("enemy"):
+		enemy.reset()  # Call reset() on each enemy
 
