@@ -281,6 +281,77 @@ position = Vector2(973, 432)
 z_index = 4
 position = Vector2(154, 365)
 
+[node name="ConfirmationWindow" type="Node2D" parent="."]
+visible = false
+z_index = 6
+
+[node name="ColorRect" type="ColorRect" parent="ConfirmationWindow"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.580392)
+
+[node name="ColorRect2" type="ColorRect" parent="ConfirmationWindow"]
+offset_left = 420.0
+offset_top = 206.0
+offset_right = 790.0
+offset_bottom = 456.0
+color = Color(0.941176, 0.639216, 0.380392, 1)
+
+[node name="Label" type="Label" parent="ConfirmationWindow/ColorRect2"]
+layout_mode = 0
+offset_right = 365.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_mcf23")
+text = "THIS WILL DELETE ALL PROGRESS
+ARE YOU SURE?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Yes" type="Button" parent="ConfirmationWindow"]
+offset_left = 477.0
+offset_top = 347.0
+offset_right = 576.0
+offset_bottom = 394.0
+theme_override_fonts/font = ExtResource("5_mcf23")
+
+[node name="Label" type="Label" parent="ConfirmationWindow/Yes"]
+layout_mode = 0
+offset_top = 13.0
+offset_right = 99.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("5_mcf23")
+text = "YES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="No" type="Button" parent="ConfirmationWindow"]
+offset_left = 628.0
+offset_top = 346.0
+offset_right = 727.0
+offset_bottom = 393.0
+theme_override_fonts/font = ExtResource("5_mcf23")
+
+[node name="Label2" type="Label" parent="ConfirmationWindow/No"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 14.0
+offset_right = 99.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("5_mcf23")
+text = "NO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ConfirmationWindow/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="ConfirmationWindow/No" to="." method="_on_no_pressed"]

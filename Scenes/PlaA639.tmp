@@ -587,7 +587,6 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-collision_mask = 31
 script = ExtResource("1_7p730")
 
 [node name="FSM" type="Node" parent="."]

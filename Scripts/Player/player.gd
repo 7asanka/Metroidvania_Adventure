@@ -8,6 +8,8 @@ var max_health = 3
 var can_double_jump = false
 var has_double_jumped = false
 var attack_value = 1
+var direction: int
+var MAttackCooldown = 5
 
 signal health_changed(new_health)
 signal respawn_requested
@@ -30,7 +32,16 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("melle_attack"):
 		fsm.change_state("MAttack")
-	
+	if Input.is_action_just_pressed("move_left"):
+		direction = -1
+	elif Input.is_action_just_pressed("move_right"):
+		direction = 1
+		
+	if direction > 0:
+		MAttackSprite.flip_h = false
+	elif direction < 0:
+		MAttackSprite.flip_h = true
+		
 	if health <= 0:
 		respawn_requested.emit()
 
@@ -39,7 +50,6 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	
 	var direction = Input.get_axis("move_left", "move_right")
-	MAttackSprite.flip_h = direction < 0
 		
 	fsm.physics_update(delta)
 	move_and_slide()
@@ -51,13 +61,7 @@ func take_damage(value):
 	fsm.change_state("Hurt")
 
 func respawn():
-	if SaveManager.player_data["last_checkpoint"] != Vector2.ZERO:
-		global_position = SaveManager.player_data["last_checkpoint"]
-	else:
-		global_position = Vector2.ZERO
-
-	health = max_health
-	health_changed.emit(health)
+	get_tree().reload_current_scene()
 
 func save_checkpoint(position):
 	SaveManager.player_data["last_checkpoint"] = position

@@ -2,11 +2,12 @@ extends CharacterBody2D
 
 var health = 3
 var max_health = 3
-
+var direction
 @export var enemy_id: String  
 
 @onready var mush_anim = $AnimationPlayer
 @onready var fsm = $MushFSM
+@onready var hitbox = $MushCollider
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -20,11 +21,15 @@ func _ready():
 	fsm.change_state("MushPatrol")
 
 func _process(delta):
+	
+		
 	fsm.update(delta)
-	if health <= 0:
-		await mush_anim.animation_finished
-		mush_anim.play("Death")
-		queue_free()
+	
+	if velocity.x > 0:
+		direction = 1
+	elif velocity.x < 0:
+		direction = -1
+		
 
 func _physics_process(delta):
 	if not is_on_floor():

@@ -166,6 +166,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_5r53m")
 
 [node name="TileMap" type="TileMap" parent="."]
+z_index = -1
 position = Vector2(8, 0)
 tile_set = ExtResource("5_mglw6")
 format = 2
@@ -259,7 +260,7 @@ scale = Vector2(0.08, 0.08)
 texture_normal = ExtResource("12_uhsxo")
 
 [node name="Checkpoint" parent="." instance=ExtResource("13_gyetk")]
-position = Vector2(408, -100)
+position = Vector2(416, -100)
 checkpoint_id = "1"
 
 [node name="Checkpoint2" parent="." instance=ExtResource("13_gyetk")]
@@ -299,6 +300,7 @@ position = Vector2(3556, -87)
 enemy_id = "6"
 
 [node name="Waterfall1" type="Node2D" parent="."]
+z_index = -1
 
 [node name="Waterfall" parent="Waterfall1" instance=ExtResource("18_pqyvp")]
 position = Vector2(248, 73)
@@ -319,6 +321,7 @@ position = Vector2(248, 137)
 position = Vector2(280, 137)
 
 [node name="Waterfall2" type="Node2D" parent="."]
+z_index = -1
 
 [node name="Waterfall" parent="Waterfall2" instance=ExtResource("18_pqyvp")]
 z_index = -1

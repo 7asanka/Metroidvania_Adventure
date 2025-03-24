@@ -31,6 +31,7 @@ func use_checkpoint():
 		player.health = player.max_health
 		player.health_changed.emit(player.max_health)
 		SaveManager.reset_enemies()  # 🔹 Reset enemies when activating checkpoint
+		SaveManager.save_game()
 		await anim.animation_finished
 		anim.play("default")
 		await get_tree().create_timer(1).timeout

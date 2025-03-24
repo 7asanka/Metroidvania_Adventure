@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dp0udh7ap0oey"]
+[gd_scene load_steps=42 format=3 uid="uid://dp0udh7ap0oey"]
 
 [ext_resource type="Script" path="res://Scripts/MushEnemy/MushroomEnemy.gd" id="1_qw2rr"]
 [ext_resource type="Script" path="res://Scripts/MushEnemy/MushroomFSM.gd" id="2_junu8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cuirdt8byifre" path="res://Assets/platformer_metroidvania asset pack v1.01/enemies sprites/mushroom/mushroom_death_anim_strip_6.png" id="5_204g6"]
 [ext_resource type="Texture2D" uid="uid://d01prfik7nxjy" path="res://Assets/platformer_metroidvania asset pack v1.01/enemies sprites/mushroom/mushroom_crushed_anim_strip_6.png" id="5_h2sng"]
 [ext_resource type="Texture2D" uid="uid://cbcoqw4vhcoua" path="res://Assets/platformer_metroidvania asset pack v1.01/enemies sprites/mushroom/mushroom_hit_anim_strip_3.png" id="5_k2k7b"]
+[ext_resource type="Script" path="res://Scripts/MushEnemy/MushDeath.gd" id="5_oqgdg"]
 [ext_resource type="Texture2D" uid="uid://b1cmcc5nc38mu" path="res://Assets/platformer_metroidvania asset pack v1.01/enemies sprites/mushroom/mushroom_walk_anim_strip_8.png" id="6_pdlfr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_37lm2"]
@@ -350,6 +351,7 @@ radius = 12.0
 
 [node name="MushEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
+collision_mask = 15
 script = ExtResource("1_qw2rr")
 
 [node name="MushFSM" type="Node" parent="."]
@@ -360,6 +362,9 @@ script = ExtResource("3_d8quj")
 
 [node name="MushHurt" type="Node" parent="MushFSM"]
 script = ExtResource("4_j5l1t")
+
+[node name="MushDeath" type="Node" parent="MushFSM"]
+script = ExtResource("5_oqgdg")
 
 [node name="MushCollider" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -399,6 +404,7 @@ target_position = Vector2(0, 30)
 collision_mask = 4
 
 [node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, -14)

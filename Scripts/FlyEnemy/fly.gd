@@ -2,12 +2,15 @@ extends CharacterBody2D
 
 var health = 2
 var max_health = 2
+var direction: int
 var chasing = false
+var taking_damage = false
 @export var enemy_id: String  
 
-@onready var b_fly_anim = $AnimationPlayer
-@onready var b_fly_sprite = $AnimatedSprite2D
-@onready var b_fly_fsm = $BFlyFSM
+@onready var anim = $AnimationPlayer
+@onready var sprite = $AnimatedSprite2D
+@onready var fsm = $BFlyFSM
+@onready var hurtbox = $CollisionShape2D
 
 func _ready():
 	# Restore enemy position if needed
@@ -16,26 +19,37 @@ func _ready():
 	else:
 		SaveManager.enemies[enemy_id] = global_position
 
-	b_fly_fsm.change_state("BFlyPatrol")
-	
+	fsm.change_state("BFlyPatrol")
+
 func _process(delta):
-	b_fly_fsm.update(delta)
-	
-	if health <= 0:
-		queue_free()
-		
+	fsm.update(delta)
+
 	if velocity.x > 0:
-		b_fly_sprite.flip_h = true
+		sprite.flip_h = true
+		direction = 1
 	elif velocity.x < 0:
-		b_fly_sprite.flip_h = false
-	
+		direction = -1
+		sprite.flip_h = false
+
 func _physics_process(delta):
-	b_fly_fsm.physics_update(delta)
+	fsm.physics_update(delta)
 	move_and_slide()
 
 func take_damage(damage):
+	taking_damage = true
+	if health <= 0:  
+		print("Already dead, ignoring extra hit.")
+		return
+
 	health -= damage
-	
+	print("Fly HP:", health, "Damage taken:", damage)  # Debugging
+
+	if health <= 0:
+		print("Fly should die now.")
+		fsm.change_state("BFlyDeath")
+	else:
+		fsm.change_state("BFlyHurt")
+
 func reset():
-	b_fly_fsm.change_state("BFlyPatrol")
+	fsm.change_state("BFlyPatrol")
 	health = max_health
