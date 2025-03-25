@@ -1,14 +1,22 @@
 extends Control
 
-@export var heart_container: Node  # The node holding the heart sprites
 @export var full_heart_texture: Texture  # Texture for a full heart
 @export var empty_heart_texture: Texture  # Texture for an empty heart
+
+@onready var heart_container = $HeartContainer
+@onready var pause_button = $PauseButton
+@onready var pause_menu = $PauseMenu
 
 var max_health = 3  # Adjust based on your game's max health
 
 func _ready():
+	pause_menu.visible = false
 	call_deferred("_connect_player")
 
+func _process(delta):
+	pass
+	#pause_menu.toggle_pause_menu()
+	
 func _connect_player():
 	var player = get_tree().get_first_node_in_group("player")  
 	if player:
@@ -26,3 +34,8 @@ func update_hearts(new_health):
 			heart.texture = full_heart_texture
 		else:
 			heart.texture = empty_heart_texture
+
+
+func _on_pause_button_pressed():
+	get_tree().paused = true
+	pause_menu.visible = true

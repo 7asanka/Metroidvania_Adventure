@@ -23,7 +23,7 @@ func physics_update(delta):
 	# Get floor (platform) velocity if standing on one
 	var platform_velocity = object.get_platform_velocity()
 	 # Adjust for moving platforms
-	object.velocity.x -= platform_velocity.x  # Neutralize platform effect
+	object.velocity.x -= platform_velocity.x # Neutralize platform effect
 	
 	object.move_and_slide()
 	

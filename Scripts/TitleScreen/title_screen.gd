@@ -29,8 +29,10 @@ func _on_quit_button_pressed():
 func _on_no_pressed():
 	confirmation_window.visible = false
 
-
 func _on_yes_pressed():
 	if FileAccess.file_exists(SAVE_FILE):
 		SaveManager.reset_save()
 		get_tree().change_scene_to_file("res://Scenes/main.tscn")
+
+func _on_credit_button_2_pressed():
+	get_tree().change_scene_to_file("res://Scenes/credit_screen.tscn")

@@ -1,32 +1,36 @@
-[gd_scene load_steps=17 format=3 uid="uid://c6ytnma2lwtoe"]
+[gd_scene load_steps=20 format=3 uid="uid://cjl43rmsk6xo1"]
 
-[ext_resource type="Texture2D" uid="uid://bli3gwj0pglt0" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/background.png" id="1_bjj7i"]
-[ext_resource type="Script" path="res://Scripts/TitleScreen/title_screen.gd" id="1_wnoda"]
-[ext_resource type="Texture2D" uid="uid://c4ca0bnokanl5" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_2.png" id="2_xhn0j"]
-[ext_resource type="Texture2D" uid="uid://be3h2voeq3fpq" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/fg_0.png" id="3_uftbp"]
-[ext_resource type="Texture2D" uid="uid://ccqk5wc34fosp" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/fg_1.png" id="4_iirxf"]
-[ext_resource type="FontFile" uid="uid://bojj2b2ar2ljw" path="res://Assets/Fonts/Mystery Font.ttf" id="5_mcf23"]
-[ext_resource type="TileSet" uid="uid://c5cy81p2fpput" path="res://UI/main.tres" id="5_rtyne"]
-[ext_resource type="Texture2D" uid="uid://c3mks886dvsns" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/grass_props.png" id="6_k5sjk"]
-[ext_resource type="PackedScene" uid="uid://dvois7wmt3og0" path="res://Scenes/waterfall.tscn" id="6_sx0ox"]
-[ext_resource type="Texture2D" uid="uid://dk00j48jwqfdr" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/flowers_props.png" id="7_lc6ic"]
-[ext_resource type="Texture2D" uid="uid://vgf62fx2lyqe" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/bigflowers_props.png" id="8_v1oh7"]
-[ext_resource type="Texture2D" uid="uid://joj78t6w0co6" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/wooden_plate.png" id="9_c5wa8"]
-[ext_resource type="Texture2D" uid="uid://brmbgombwio42" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/arrow_plate_right.png" id="10_tfc43"]
-[ext_resource type="PackedScene" uid="uid://dd0c8llrxri83" path="res://Scenes/water_splash.tscn" id="12_qs5g6"]
-[ext_resource type="PackedScene" uid="uid://dp0udh7ap0oey" path="res://Scenes/MushroomEnemy.tscn" id="13_60fyk"]
-[ext_resource type="PackedScene" uid="uid://fk6jf8xqgbq" path="res://Scenes/checkpoint.tscn" id="14_l584t"]
+[ext_resource type="Script" path="res://Scripts/CreditScreen/CreditScreen.gd" id="1_vfyij"]
+[ext_resource type="Texture2D" uid="uid://bli3gwj0pglt0" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/background.png" id="2_btgpt"]
+[ext_resource type="Texture2D" uid="uid://c4ca0bnokanl5" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_2.png" id="3_uyml4"]
+[ext_resource type="Texture2D" uid="uid://be3h2voeq3fpq" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/fg_0.png" id="4_5a231"]
+[ext_resource type="Texture2D" uid="uid://ccqk5wc34fosp" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/fg_1.png" id="5_rfweg"]
+[ext_resource type="FontFile" uid="uid://bojj2b2ar2ljw" path="res://Assets/Fonts/Mystery Font.ttf" id="6_l3xbv"]
+[ext_resource type="TileSet" uid="uid://c5cy81p2fpput" path="res://UI/main.tres" id="7_my3ak"]
+[ext_resource type="Texture2D" uid="uid://c3mks886dvsns" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/grass_props.png" id="8_omd4b"]
+[ext_resource type="Texture2D" uid="uid://dk00j48jwqfdr" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/flowers_props.png" id="9_mp5cg"]
+[ext_resource type="Texture2D" uid="uid://vgf62fx2lyqe" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/bigflowers_props.png" id="10_3pibk"]
+[ext_resource type="Texture2D" uid="uid://joj78t6w0co6" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/wooden_plate.png" id="11_6klpy"]
+[ext_resource type="Texture2D" uid="uid://brmbgombwio42" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/arrow_plate_right.png" id="12_yk3u7"]
+[ext_resource type="PackedScene" uid="uid://dvois7wmt3og0" path="res://Scenes/waterfall.tscn" id="13_uak5w"]
+[ext_resource type="PackedScene" uid="uid://dd0c8llrxri83" path="res://Scenes/water_splash.tscn" id="14_m0lyq"]
+[ext_resource type="PackedScene" uid="uid://dp0udh7ap0oey" path="res://Scenes/MushroomEnemy.tscn" id="15_jyoca"]
+[ext_resource type="PackedScene" uid="uid://fk6jf8xqgbq" path="res://Scenes/checkpoint.tscn" id="16_scx7f"]
+[ext_resource type="FontFile" uid="uid://v81wtajbxx2u" path="res://Assets/Fonts/minecraft/Minecraft.ttf" id="17_67tfl"]
+[ext_resource type="Texture2D" uid="uid://bedkwywijvk0w" path="res://Assets/pngwing.com.png" id="18_bmmqe"]
+[ext_resource type="Texture2D" uid="uid://cr8knnn60usmr" path="res://Assets/pngwing.com (1).png" id="19_cnmna"]
 
-[node name="TitleScreen" type="Control"]
+[node name="CreditScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wnoda")
+script = ExtResource("1_vfyij")
 
 [node name="BackGroundImages" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -35,133 +39,116 @@ offset_bottom = 40.0
 layout_mode = 1
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("1_bjj7i")
+texture = ExtResource("2_btgpt")
 
 [node name="TextureRect2" type="TextureRect" parent="BackGroundImages"]
 z_index = 1
 layout_mode = 1
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("2_xhn0j")
+texture = ExtResource("3_uyml4")
 
 [node name="TextureRect3" type="TextureRect" parent="BackGroundImages"]
 z_index = 4
 layout_mode = 1
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("3_uftbp")
+texture = ExtResource("4_5a231")
 
 [node name="TextureRect4" type="TextureRect" parent="BackGroundImages"]
 z_index = 4
 layout_mode = 1
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("4_iirxf")
+texture = ExtResource("5_rfweg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 6
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.301961)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = 6
+layout_mode = 0
+offset_top = 552.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.537255, 0.356863, 0.301961, 1)
 
 [node name="Label" type="Label" parent="."]
-z_index = 5
-layout_mode = 0
-offset_left = 253.5
-offset_top = 42.0
-offset_right = 898.5
-offset_bottom = 193.0
+z_index = 6
+offset_left = 248.0
+offset_top = 40.0
+offset_right = 893.0
+offset_bottom = 148.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 23
-theme_override_fonts/font = ExtResource("5_mcf23")
+theme_override_fonts/font = ExtResource("6_l3xbv")
 theme_override_font_sizes/font_size = 40
-text = "METROIDVANIA ADVENTURE"
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="."]
+z_index = 6
+offset_left = -141.0
+offset_top = 568.0
+offset_right = 504.0
+offset_bottom = 676.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 23
+theme_override_fonts/font = ExtResource("6_l3xbv")
+theme_override_font_sizes/font_size = 40
+text = "FIND ME HERE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NewGameButton" type="Button" parent="."]
-z_index = 5
-layout_mode = 0
-offset_left = 448.0
-offset_top = 210.0
-offset_right = 763.0
-offset_bottom = 273.0
+[node name="Label3" type="Label" parent="."]
+z_index = 6
+offset_left = 515.0
+offset_top = 568.0
+offset_right = 1160.0
+offset_bottom = 676.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 23
+theme_override_fonts/font = ExtResource("6_l3xbv")
+theme_override_font_sizes/font_size = 40
+text = "ASSET PACK HERE"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label" type="Label" parent="NewGameButton"]
+[node name="ReturnButton" type="Button" parent="."]
+z_index = 6
+offset_left = 418.0
+offset_top = 120.0
+offset_right = 733.0
+offset_bottom = 176.0
+text = "
+"
+
+[node name="Label" type="Label" parent="ReturnButton"]
 layout_mode = 2
 offset_top = 30.0
 offset_right = 315.0
 offset_bottom = 70.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 23
-theme_override_fonts/font = ExtResource("5_mcf23")
+theme_override_fonts/font = ExtResource("6_l3xbv")
 theme_override_font_sizes/font_size = 40
-text = "START GAME"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ContinueButton" type="Button" parent="."]
-z_index = 5
-layout_mode = 0
-offset_left = 448.0
-offset_top = 290.0
-offset_right = 763.0
-offset_bottom = 347.0
-
-[node name="Label" type="Label" parent="ContinueButton"]
-layout_mode = 2
-offset_top = 30.0
-offset_right = 315.0
-offset_bottom = 70.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 23
-theme_override_fonts/font = ExtResource("5_mcf23")
-theme_override_font_sizes/font_size = 40
-text = "CONTINUE"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="QuitButton" type="Button" parent="."]
-z_index = 5
-layout_mode = 0
-offset_left = 447.0
-offset_top = 367.0
-offset_right = 762.0
-offset_bottom = 423.0
-
-[node name="Label" type="Label" parent="QuitButton"]
-layout_mode = 2
-offset_top = 30.0
-offset_right = 315.0
-offset_bottom = 70.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 23
-theme_override_fonts/font = ExtResource("5_mcf23")
-theme_override_font_sizes/font_size = 40
-text = "QUIT"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CreditButton2" type="Button" parent="."]
-z_index = 5
-layout_mode = 0
-offset_left = 447.0
-offset_top = 447.0
-offset_right = 762.0
-offset_bottom = 503.0
-
-[node name="Label" type="Label" parent="CreditButton2"]
-layout_mode = 2
-offset_top = 30.0
-offset_right = 315.0
-offset_bottom = 70.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 23
-theme_override_fonts/font = ExtResource("5_mcf23")
-theme_override_font_sizes/font_size = 40
-text = "CREDITS
+text = "RETURN
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 3
-tile_set = ExtResource("5_rtyne")
+tile_set = ExtResource("7_my3ak")
 format = 2
 layer_0/tile_data = PackedInt32Array(1572864, 65536, 0, 1638400, 65536, 1, 1572865, 131072, 0, 1638401, 131072, 1, 1572866, 196608, 0, 1638402, 196608, 1, 1572867, 262144, 0, 1638403, 262144, 1, 1572868, 65536, 0, 1638404, 65536, 1, 1572869, 131072, 0, 1638405, 131072, 1, 1572870, 196608, 0, 1638406, 196608, 1, 1572871, 262144, 0, 1638407, 262144, 1, 1572872, 65536, 0, 1638408, 65536, 1, 1572873, 131072, 0, 1638409, 131072, 1, 1572874, 196608, 0, 1638410, 196608, 1, 1572875, 262144, 0, 1638411, 262144, 1, 1572876, 65536, 0, 1638412, 65536, 1, 1572877, 131072, 0, 1638413, 131072, 1, 1572878, 196608, 0, 1638414, 196608, 1, 1572879, 262144, 0, 1638415, 262144, 1, 1572880, 65536, 0, 1638416, 65536, 1, 1572881, 131072, 0, 1638417, 131072, 1, 1572882, 196608, 0, 1638418, 196608, 1, 1572883, 262144, 0, 1638419, 262144, 1, 1572884, 327680, 0, 1638420, 327680, 1, 1769493, 262144, 1, 1769494, 327680, 1, 1703956, 458752, 4, 1835030, 458752, 4, 1769492, 196608, 1, 1900566, 196608, 1, 1966102, 196608, 2, 1966103, 262144, 2, 1703957, 262144, 0, 1703958, 327680, 0, 1835031, 262144, 0, 1900567, 262144, 1, 1835032, 327680, 0, 1900568, 327680, 1, 1703954, 196608, 2, 1769490, 196608, 3, 1703955, 262144, 2, 1769491, 131072, 1, 1835028, 196608, 2, 1835029, 262144, 2, 1703953, 131072, 2, 1769489, 131072, 3, 1835027, 131072, 2, 1900563, 131072, 3, 1900564, 196608, 3, 1900565, 131072, 1, 1966101, 131072, 2, 2031637, 131072, 3, 2031638, 196608, 3, 2031639, 262144, 3, 1966105, 65536, 0, 1966106, 131072, 0, 1966107, 196608, 0, 1966108, 262144, 0, 1966109, 65536, 0, 1966110, 131072, 0, 1966111, 196608, 0, 1966112, 262144, 0, 1966113, 65536, 0, 1966114, 131072, 0, 1966115, 196608, 0, 1966116, 262144, 0, 2031640, 65536, 1, 2031641, 65536, 1, 2031642, 131072, 1, 2031643, 196608, 1, 2031644, 262144, 1, 2031645, 65536, 1, 2031646, 131072, 1, 2031647, 196608, 1, 2031648, 262144, 1, 2031649, 65536, 1, 2031650, 131072, 1, 2031651, 196608, 1, 2031652, 262144, 1, 1966117, 65536, 0, 2031653, 65536, 1, 1966118, 262144, 0, 2031654, 262144, 1, 1966104, 458752, 4, 1966119, 327680, 0, 2031655, 327680, 1, 2097191, 327680, 2, 2162727, 327680, 3, 2228263, 327680, 4, 2293799, 327680, 1, 2359335, 327680, 2, 2424871, 327680, 3, 2490407, 327680, 4, 2555943, 327680, 1, 2162726, 262144, 3, 2228262, 262144, 4, 2293798, 262144, 1, 2359334, 262144, 2, 2424870, 262144, 3, 2490406, 262144, 4, 2555942, 262144, 1, 2097190, 262144, 2, 2162699, 196608, 2, 2097163, 196608, 3, 2031627, 196608, 2, 1966091, 196608, 3, 1900555, 196608, 2, 1835019, 196608, 3, 1769483, 196608, 2, 1703947, 196608, 3, 1703946, 196608, 3, 1703945, 196608, 3, 1703944, 196608, 3, 1703943, 196608, 3, 1703942, 196608, 3, 1703941, 196608, 3, 1703940, 196608, 3, 1703939, 196608, 3, 1703938, 196608, 3, 1703937, 196608, 3, 1703936, 196608, 3, 1769472, 196608, 2, 1835008, 196608, 3, 1900544, 196608, 2, 1966080, 196608, 3, 2031616, 196608, 2, 2097152, 196608, 3, 2162688, 196608, 2, 2228224, 196608, 3, 2293760, 196608, 2, 2359296, 196608, 3, 2424832, 196608, 2, 2490368, 196608, 3, 2555904, 196608, 2, 2555905, 196608, 2, 2490369, 196608, 3, 2424833, 196608, 2, 2359297, 196608, 3, 2293761, 196608, 2, 2228225, 196608, 3, 2162689, 196608, 2, 2097153, 196608, 3, 2031617, 196608, 2, 1966081, 196608, 3, 1900545, 196608, 2, 1835009, 196608, 3, 1769473, 196608, 2, 1769474, 196608, 2, 1835010, 196608, 3, 1900546, 196608, 2, 1966082, 196608, 3, 2031618, 196608, 2, 2097154, 196608, 3, 2162690, 196608, 2, 2228226, 196608, 3, 2293762, 196608, 2, 2359298, 196608, 3, 2424834, 196608, 2, 2490370, 196608, 3, 2555906, 196608, 2, 2555907, 196608, 2, 2490371, 196608, 3, 2424835, 196608, 2, 2359299, 196608, 3, 2293763, 196608, 2, 2228227, 196608, 3, 2162691, 196608, 2, 2097155, 196608, 3, 2031619, 196608, 2, 1966083, 196608, 3, 1900547, 196608, 2, 1835011, 196608, 3, 1769475, 196608, 2, 1769476, 196608, 2, 1835012, 196608, 3, 1900548, 196608, 2, 1966084, 196608, 3, 2031620, 196608, 2, 2097156, 196608, 3, 2162692, 196608, 2, 2228228, 196608, 3, 2293764, 196608, 2, 2359300, 196608, 3, 2424836, 196608, 2, 2490372, 196608, 3, 2555908, 196608, 2, 2555909, 196608, 2, 2490373, 196608, 3, 2424837, 196608, 2, 2359301, 196608, 3, 2293765, 196608, 2, 2228229, 196608, 3, 2162693, 196608, 2, 2097157, 196608, 3, 2031621, 196608, 2, 1966085, 196608, 3, 1900549, 196608, 2, 1835013, 196608, 3, 1769477, 196608, 2, 1769478, 196608, 2, 1835014, 196608, 3, 1900550, 196608, 2, 1966086, 196608, 3, 2031622, 196608, 2, 2097158, 196608, 3, 2162694, 196608, 2, 2228230, 196608, 3, 2293766, 196608, 2, 2359302, 196608, 3, 2424838, 196608, 2, 2490374, 196608, 3, 2555910, 196608, 2, 2555911, 196608, 2, 2490375, 196608, 3, 2424839, 196608, 2, 2359303, 196608, 3, 2293767, 196608, 2, 2228231, 196608, 3, 2162695, 196608, 2, 2097159, 196608, 3, 2031623, 196608, 2, 1966087, 196608, 3, 1900551, 196608, 2, 1835015, 196608, 3, 1769479, 196608, 2, 1769480, 196608, 2, 1835016, 196608, 3, 1900552, 196608, 2, 1966088, 196608, 3, 2031624, 196608, 2, 2097160, 196608, 3, 2162696, 196608, 2, 2228232, 196608, 3, 2293768, 196608, 2, 2359304, 196608, 3, 2424840, 196608, 2, 2490376, 196608, 3, 2555912, 196608, 2, 2555913, 196608, 2, 2490377, 196608, 3, 2424841, 196608, 2, 2359305, 196608, 3, 2293769, 196608, 2, 2228233, 196608, 3, 2162697, 196608, 2, 2097161, 196608, 3, 2031625, 196608, 2, 1966089, 196608, 3, 1900553, 196608, 2, 1835017, 196608, 3, 1769481, 196608, 2, 1769482, 196608, 2, 1835018, 196608, 3, 1900554, 196608, 2, 1966090, 196608, 3, 2031626, 196608, 2, 2097162, 196608, 3, 2162698, 196608, 2, 2228234, 196608, 3, 2293770, 196608, 2, 2359306, 196608, 3, 2424842, 196608, 2, 2490378, 196608, 3, 2555914, 196608, 2, 2555915, 196608, 2, 2490379, 196608, 3, 2424843, 196608, 2, 2359307, 196608, 3, 2293771, 196608, 2, 2228235, 196608, 3, 2228236, 196608, 3, 2162700, 196608, 2, 2097164, 196608, 3, 2031628, 196608, 2, 1966092, 196608, 3, 1900556, 196608, 2, 1835020, 196608, 3, 1769484, 196608, 2, 1703948, 196608, 3, 1703949, 196608, 3, 1769485, 196608, 2, 1835021, 196608, 3, 1900557, 196608, 2, 1966093, 196608, 3, 2031629, 196608, 2, 2097165, 196608, 3, 2162701, 196608, 2, 2228237, 196608, 3, 2293773, 196608, 2, 2293772, 196608, 2, 2359308, 196608, 3, 2424844, 196608, 2, 2490380, 196608, 3, 2555916, 196608, 2, 2555917, 196608, 2, 2490381, 196608, 3, 2424845, 196608, 2, 2359309, 196608, 3, 2359310, 196608, 3, 2293774, 196608, 2, 2228238, 196608, 3, 2162702, 196608, 2, 2097166, 196608, 3, 2031630, 196608, 2, 1966094, 196608, 3, 1900558, 196608, 2, 1835022, 196608, 3, 1769486, 196608, 2, 1703950, 196608, 3, 1703951, 196608, 3, 1769487, 196608, 2, 1835023, 196608, 3, 1900559, 196608, 2, 1966095, 196608, 3, 2031631, 196608, 2, 2097167, 196608, 3, 2162703, 196608, 2, 2228239, 196608, 3, 2293775, 196608, 2, 2359311, 196608, 3, 2424847, 196608, 2, 2424846, 196608, 2, 2490382, 196608, 3, 2555918, 196608, 2, 2555919, 196608, 2, 2490383, 196608, 3, 2490384, 196608, 3, 2424848, 196608, 2, 2359312, 196608, 3, 2293776, 196608, 2, 2228240, 196608, 3, 2162704, 196608, 2, 2097168, 196608, 3, 2031632, 196608, 2, 1966096, 196608, 3, 1900560, 196608, 2, 1835024, 196608, 3, 1769488, 196608, 2, 1703952, 196608, 3, 1835025, 196608, 3, 1900561, 196608, 2, 1966097, 196608, 3, 2031633, 196608, 2, 2097169, 196608, 3, 2162705, 196608, 2, 2228241, 196608, 3, 2293777, 196608, 2, 2359313, 196608, 3, 2424849, 196608, 2, 2490385, 196608, 3, 2555921, 196608, 2, 2555920, 196608, 2, 2555922, 196608, 2, 2490386, 196608, 3, 2424850, 196608, 2, 2359314, 196608, 3, 2293778, 196608, 2, 2228242, 196608, 3, 2162706, 196608, 2, 2097170, 196608, 3, 2031634, 196608, 2, 1966098, 196608, 3, 1900562, 196608, 2, 1835026, 196608, 3, 1966099, 196608, 3, 2031635, 196608, 2, 2097171, 196608, 3, 2162707, 196608, 2, 2228243, 196608, 3, 2293779, 196608, 2, 2359315, 196608, 3, 2424851, 196608, 2, 2490387, 196608, 3, 2555923, 196608, 2, 2555924, 196608, 2, 2490388, 196608, 3, 2424852, 196608, 2, 2359316, 196608, 3, 2293780, 196608, 2, 2228244, 196608, 3, 2162708, 196608, 2, 2097172, 196608, 3, 2031636, 196608, 2, 1966100, 196608, 3, 2097173, 196608, 3, 2162709, 196608, 2, 2228245, 196608, 3, 2293781, 196608, 2, 2359317, 196608, 3, 2424853, 196608, 2, 2490389, 196608, 3, 2555925, 196608, 2, 2555926, 196608, 2, 2490390, 196608, 3, 2424854, 196608, 2, 2359318, 196608, 3, 2293782, 196608, 2, 2228246, 196608, 3, 2162710, 196608, 2, 2097174, 196608, 3, 2097175, 196608, 3, 2162711, 196608, 2, 2228247, 196608, 3, 2293783, 196608, 2, 2359319, 196608, 3, 2424855, 196608, 2, 2490391, 196608, 3, 2555927, 196608, 2, 2555928, 196608, 2, 2490392, 196608, 3, 2424856, 196608, 2, 2359320, 196608, 3, 2293784, 196608, 2, 2228248, 196608, 3, 2162712, 196608, 2, 2097176, 196608, 3, 2097177, 196608, 3, 2162713, 196608, 2, 2228249, 196608, 3, 2293785, 196608, 2, 2359321, 196608, 3, 2424857, 196608, 2, 2490393, 196608, 3, 2555929, 196608, 2, 2555930, 196608, 2, 2490394, 196608, 3, 2424858, 196608, 2, 2359322, 196608, 3, 2293786, 196608, 2, 2228250, 196608, 3, 2162714, 196608, 2, 2097178, 196608, 3, 2097179, 196608, 3, 2162715, 196608, 2, 2228251, 196608, 3, 2293787, 196608, 2, 2359323, 196608, 3, 2424859, 196608, 2, 2490395, 196608, 3, 2555931, 196608, 2, 2555932, 196608, 2, 2490396, 196608, 3, 2424860, 196608, 2, 2359324, 196608, 3, 2293788, 196608, 2, 2228252, 196608, 3, 2162716, 196608, 2, 2097180, 196608, 3, 2097181, 196608, 3, 2162717, 196608, 2, 2228253, 196608, 3, 2293789, 196608, 2, 2359325, 196608, 3, 2424861, 196608, 2, 2490397, 196608, 3, 2555933, 196608, 2, 2555934, 196608, 2, 2490398, 196608, 3, 2424862, 196608, 2, 2359326, 196608, 3, 2293790, 196608, 2, 2228254, 196608, 3, 2162718, 196608, 2, 2097182, 196608, 3, 2097183, 196608, 3, 2162719, 196608, 2, 2228255, 196608, 3, 2293791, 196608, 2, 2359327, 196608, 3, 2424863, 196608, 2, 2490399, 196608, 3, 2555935, 196608, 2, 2555936, 196608, 2, 2490400, 196608, 3, 2424864, 196608, 2, 2359328, 196608, 3, 2293792, 196608, 2, 2228256, 196608, 3, 2162720, 196608, 2, 2097184, 196608, 3, 2097185, 196608, 3, 2162721, 196608, 2, 2228257, 196608, 3, 2293793, 196608, 2, 2359329, 196608, 3, 2424865, 196608, 2, 2490401, 196608, 3, 2555937, 196608, 2, 2555938, 196608, 2, 2490402, 196608, 3, 2424866, 196608, 2, 2359330, 196608, 3, 2293794, 196608, 2, 2228258, 196608, 3, 2162722, 196608, 2, 2097186, 196608, 3, 2097187, 196608, 3, 2162723, 196608, 2, 2228259, 196608, 3, 2293795, 196608, 2, 2359331, 196608, 3, 2424867, 196608, 2, 2490403, 196608, 3, 2555939, 196608, 2, 2555940, 196608, 2, 2490404, 196608, 3, 2424868, 196608, 2, 2359332, 196608, 3, 2293796, 196608, 2, 2228260, 196608, 3, 2162724, 196608, 2, 2097188, 196608, 3, 2097189, 196608, 3, 2162725, 196608, 2, 2228261, 196608, 3, 2293797, 196608, 2, 2359333, 196608, 3, 2424869, 196608, 2, 2490405, 196608, 3, 2555941, 196608, 2, 2293804, 0, 4, 2359340, 0, 1, 2424876, 0, 2, 2490412, 0, 3, 2293805, 65536, 4, 2359341, 65536, 1, 2424877, 65536, 2, 2490413, 65536, 3, 2031660, 0, 4, 2097196, 0, 1, 2162732, 0, 2, 2228268, 0, 3, 2031661, 65536, 4, 2097197, 65536, 1, 2162733, 65536, 2, 2228269, 65536, 3, 1769516, 0, 0, 1835052, 0, 1, 1900588, 0, 2, 1966124, 0, 3, 1769517, 65536, 0, 1835053, 65536, 1, 1900589, 65536, 2, 1966125, 65536, 3, 1769518, 131072, 0, 1769519, 196608, 0, 1769520, 262144, 0, 1769521, 65536, 0, 1769522, 131072, 0, 1769523, 196608, 0, 1769524, 262144, 0, 1769525, 65536, 0, 1769526, 131072, 0, 1769527, 196608, 0, 1769528, 262144, 0, 1769529, 65536, 0, 1769530, 131072, 0, 1769531, 196608, 0, 1769532, 262144, 0, 1769533, 65536, 0, 1769534, 131072, 0, 1769535, 196608, 0, 1769536, 262144, 0, 1769537, 65536, 0, 1769538, 131072, 0, 1769539, 196608, 0, 1769540, 262144, 0, 1769541, 65536, 0, 1769542, 131072, 0, 1769543, 196608, 0, 2490414, 131072, 3, 2490415, 196608, 3, 2490416, 131072, 3, 2490417, 196608, 3, 2490418, 131072, 3, 2490419, 196608, 3, 2490420, 131072, 3, 2490421, 196608, 3, 2424878, 131072, 2, 2424879, 196608, 2, 2424880, 131072, 2, 2424881, 196608, 2, 2424882, 131072, 2, 2424883, 196608, 2, 2424884, 131072, 2, 2424885, 196608, 2, 2424886, 131072, 2, 2490422, 131072, 3, 2424887, 196608, 2, 2490423, 196608, 3, 2424888, 131072, 2, 2490424, 131072, 3, 2424889, 196608, 2, 2490425, 196608, 3, 2424890, 131072, 2, 2490426, 131072, 3, 2424891, 196608, 2, 2490427, 196608, 3, 2424892, 131072, 2, 2490428, 131072, 3, 2424893, 196608, 2, 2490429, 196608, 3, 2424894, 131072, 2, 2490430, 131072, 3, 2424895, 196608, 2, 2490431, 196608, 3, 2424896, 131072, 2, 2490432, 131072, 3, 2424897, 196608, 2, 2490433, 196608, 3, 2424898, 131072, 2, 2490434, 131072, 3, 2424899, 196608, 2, 2490435, 196608, 3, 2424900, 196608, 2, 2490436, 196608, 10, 2424901, 196608, 2, 2490437, 262144, 10, 2424902, 196608, 2, 2490438, 65536, 10, 2424903, 196608, 2, 2490439, 131072, 10, 2293813, 196608, 2, 2228277, 196608, 2, 2162741, 196608, 2, 2097205, 196608, 2, 2031669, 196608, 2, 1966133, 196608, 2, 1900597, 196608, 2, 1835061, 65536, 1, 1835060, 262144, 1, 1835059, 196608, 1, 1835058, 131072, 1, 1835057, 65536, 1, 1835056, 262144, 1, 1835055, 196608, 1, 1835054, 131072, 1, 1900590, 196608, 2, 1966126, 196608, 2, 2031662, 196608, 2, 2097198, 196608, 2, 2162734, 196608, 2, 2228270, 196608, 2, 2293806, 196608, 2, 2359342, 196608, 2, 2359343, 196608, 2, 2293807, 196608, 2, 2228271, 196608, 2, 2162735, 196608, 2, 2097199, 196608, 2, 2031663, 196608, 2, 1966127, 196608, 2, 1900591, 196608, 2, 1900592, 196608, 2, 1966128, 196608, 2, 2031664, 196608, 2, 2097200, 196608, 2, 2162736, 196608, 2, 2228272, 196608, 2, 2293808, 196608, 2, 2359344, 196608, 2, 2359345, 196608, 2, 2293809, 196608, 2, 2228273, 196608, 2, 2162737, 196608, 2, 2097201, 196608, 2, 2031665, 196608, 2, 1966129, 196608, 2, 1900593, 196608, 2, 1900594, 196608, 2, 1966130, 196608, 2, 2031666, 196608, 2, 2097202, 196608, 2, 2162738, 196608, 2, 2228274, 196608, 2, 2293810, 196608, 2, 2359346, 196608, 2, 2359347, 196608, 2, 2293811, 196608, 2, 2228275, 196608, 2, 2162739, 196608, 2, 2097203, 196608, 2, 2031667, 196608, 2, 1966131, 196608, 2, 1900595, 196608, 2, 1900596, 196608, 2, 1966132, 196608, 2, 2031668, 196608, 2, 2097204, 196608, 2, 2162740, 196608, 2, 2228276, 196608, 2, 2293812, 196608, 2, 2359348, 196608, 2, 2359349, 196608, 2, 2359350, 196608, 2, 2293814, 196608, 2, 2228278, 196608, 2, 2162742, 196608, 2, 2097206, 196608, 2, 2031670, 196608, 2, 1966134, 196608, 2, 1900598, 196608, 2, 1835062, 131072, 1, 1835063, 196608, 1, 1900599, 196608, 2, 1966135, 196608, 2, 2031671, 196608, 2, 2097207, 196608, 2, 2162743, 196608, 2, 2228279, 196608, 2, 2293815, 196608, 2, 2359351, 196608, 2, 2359352, 196608, 2, 2293816, 196608, 2, 2228280, 196608, 2, 2162744, 196608, 2, 2097208, 196608, 2, 2031672, 196608, 2, 1966136, 196608, 2, 1900600, 196608, 2, 1835064, 262144, 1, 1835065, 65536, 1, 1900601, 196608, 2, 1966137, 196608, 2, 2031673, 196608, 2, 2097209, 196608, 2, 2162745, 196608, 2, 2228281, 196608, 2, 2293817, 196608, 2, 2359353, 196608, 2, 2359354, 196608, 2, 2293818, 196608, 2, 2228282, 196608, 2, 2162746, 196608, 2, 2097210, 196608, 2, 2031674, 196608, 2, 1966138, 196608, 2, 1900602, 196608, 2, 1835066, 131072, 1, 1835067, 196608, 1, 1900603, 196608, 2, 1966139, 196608, 2, 2031675, 196608, 2, 2097211, 196608, 2, 2162747, 196608, 2, 2228283, 196608, 2, 2293819, 196608, 2, 2359355, 196608, 2, 2359356, 196608, 2, 2293820, 196608, 2, 2228284, 196608, 2, 2162748, 196608, 2, 2097212, 196608, 2, 2031676, 196608, 2, 1966140, 196608, 2, 1900604, 196608, 2, 1835068, 262144, 1, 1835069, 65536, 1, 1900605, 196608, 2, 1966141, 196608, 2, 2031677, 196608, 2, 2097213, 196608, 2, 2162749, 196608, 2, 2228285, 196608, 2, 2293821, 196608, 2, 2359357, 196608, 2, 2359358, 196608, 2, 2293822, 196608, 2, 2228286, 196608, 2, 2162750, 196608, 2, 2097214, 196608, 2, 2031678, 196608, 2, 1966142, 196608, 2, 1900606, 196608, 2, 1835070, 131072, 1, 1835071, 196608, 1, 1900607, 196608, 2, 1966143, 196608, 2, 2031679, 196608, 2, 2097215, 196608, 2, 2162751, 196608, 2, 2228287, 196608, 2, 2293823, 196608, 2, 2359359, 196608, 2, 2359360, 196608, 2, 2293824, 196608, 2, 2228288, 196608, 2, 2162752, 196608, 2, 2097216, 196608, 2, 2031680, 196608, 2, 1966144, 196608, 2, 1900608, 196608, 2, 1835072, 262144, 1, 1835073, 65536, 1, 1900609, 196608, 2, 1966145, 196608, 2, 2031681, 196608, 2, 2097217, 196608, 2, 2162753, 196608, 2, 2228289, 196608, 2, 2293825, 196608, 2, 2359361, 196608, 2, 2359362, 131072, 3, 2293826, 131072, 2, 2228290, 196608, 2, 2162754, 196608, 2, 2097218, 196608, 2, 2031682, 196608, 2, 1966146, 196608, 2, 1900610, 196608, 2, 1835074, 131072, 1, 1835075, 196608, 1, 1900611, 196608, 2, 1966147, 196608, 2, 2031683, 196608, 2, 2097219, 196608, 2, 2162755, 196608, 2, 2228291, 196608, 2, 2293827, 196608, 2, 2359363, 196608, 3, 2359364, 131072, 3, 2293828, 131072, 2, 2228292, 196608, 2, 2162756, 196608, 2, 2097220, 196608, 2, 2031684, 196608, 2, 1966148, 196608, 2, 1900612, 196608, 2, 1835076, 262144, 1, 1835077, 65536, 1, 1900613, 196608, 2, 1966149, 196608, 2, 2031685, 196608, 2, 2097221, 196608, 2, 2162757, 196608, 2, 2228293, 196608, 2, 2293829, 196608, 2, 2359365, 196608, 3, 2359366, 131072, 3, 2293830, 131072, 2, 2228294, 196608, 2, 2162758, 196608, 2, 2097222, 196608, 2, 2031686, 196608, 2, 1966150, 196608, 2, 1900614, 196608, 2, 1835078, 131072, 1, 1835079, 196608, 1, 1900615, 196608, 2, 1966151, 196608, 2, 2031687, 196608, 2, 2097223, 196608, 2, 2162759, 196608, 2, 2228295, 196608, 2, 2293831, 196608, 2, 2359367, 196608, 3, 2555948, 0, 4, 2555949, 65536, 4, 2555950, 65536, 4, 2555951, 131072, 4, 2555952, 196608, 4, 2555953, 262144, 4, 2555954, 65536, 4, 2555955, 131072, 4, 2555956, 196608, 4, 2555957, 262144, 4, 2555958, 65536, 4, 2555959, 131072, 4, 2555960, 196608, 4, 2555961, 262144, 4, 2555962, 65536, 4, 2555963, 131072, 4, 2555964, 196608, 4, 2555965, 262144, 4, 2555966, 65536, 4, 2555967, 131072, 4, 2555968, 196608, 4, 2555969, 262144, 4, 2555970, 65536, 4, 2555971, 131072, 4, 2555972, 196608, 4, 2555973, 262144, 4, 2555974, 65536, 4, 2555975, 131072, 4)
 
@@ -173,133 +160,133 @@ z_index = 4
 z_as_relative = false
 position = Vector2(32, 378)
 scale = Vector2(2, 2)
-texture = ExtResource("6_k5sjk")
+texture = ExtResource("8_omd4b")
 
 [node name="GrassProps2" type="Sprite2D" parent="ScreenProps"]
 z_index = 4
 z_as_relative = false
 position = Vector2(232, 378)
 scale = Vector2(2, 2)
-texture = ExtResource("6_k5sjk")
+texture = ExtResource("8_omd4b")
 
 [node name="GrassProps3" type="Sprite2D" parent="ScreenProps"]
 z_index = 4
 z_as_relative = false
 position = Vector2(416, 474)
 scale = Vector2(2, 2)
-texture = ExtResource("6_k5sjk")
+texture = ExtResource("8_omd4b")
 
 [node name="GrassProps4" type="Sprite2D" parent="ScreenProps"]
 z_index = 4
 z_as_relative = false
 position = Vector2(746, 426)
 scale = Vector2(2, 2)
-texture = ExtResource("6_k5sjk")
+texture = ExtResource("8_omd4b")
 
 [node name="GrassProps5" type="Sprite2D" parent="ScreenProps"]
 z_index = 5
 z_as_relative = false
 position = Vector2(914, 426)
 scale = Vector2(2, 2)
-texture = ExtResource("6_k5sjk")
+texture = ExtResource("8_omd4b")
 
 [node name="FlowersProps" type="Sprite2D" parent="ScreenProps"]
 z_index = 4
 texture_filter = 1
 position = Vector2(96, 379)
 scale = Vector2(2, 2)
-texture = ExtResource("7_lc6ic")
+texture = ExtResource("9_mp5cg")
 
 [node name="FlowersProps2" type="Sprite2D" parent="ScreenProps"]
 z_index = 4
 texture_filter = 1
 position = Vector2(447, 474)
 scale = Vector2(2, 2)
-texture = ExtResource("7_lc6ic")
+texture = ExtResource("9_mp5cg")
 
 [node name="FlowersProps3" type="Sprite2D" parent="ScreenProps"]
 z_index = 4
 texture_filter = 1
 position = Vector2(479, 474)
 scale = Vector2(2, 2)
-texture = ExtResource("7_lc6ic")
+texture = ExtResource("9_mp5cg")
 
 [node name="FlowersProps4" type="Sprite2D" parent="ScreenProps"]
 z_index = 4
 texture_filter = 1
 position = Vector2(1087, 426)
 scale = Vector2(2, 2)
-texture = ExtResource("7_lc6ic")
+texture = ExtResource("9_mp5cg")
 
 [node name="BigflowersProps" type="Sprite2D" parent="ScreenProps"]
 z_index = 4
 position = Vector2(65, 377)
 scale = Vector2(2, 2)
-texture = ExtResource("8_v1oh7")
+texture = ExtResource("10_3pibk")
 
 [node name="BigflowersProps2" type="Sprite2D" parent="ScreenProps"]
 z_index = 4
 position = Vector2(780, 425)
 scale = Vector2(2, 2)
-texture = ExtResource("8_v1oh7")
+texture = ExtResource("10_3pibk")
 
 [node name="BigflowersProps3" type="Sprite2D" parent="ScreenProps"]
 z_index = 4
 position = Vector2(384, 442)
 scale = Vector2(2, 2)
-texture = ExtResource("8_v1oh7")
+texture = ExtResource("10_3pibk")
 
 [node name="WoodenPlate" type="Sprite2D" parent="ScreenProps"]
 z_index = 3
 position = Vector2(720, 418)
 scale = Vector2(2, 2)
-texture = ExtResource("9_c5wa8")
+texture = ExtResource("11_6klpy")
 
 [node name="ArrowPlateRight" type="Sprite2D" parent="ScreenProps"]
 z_index = 3
 position = Vector2(1120, 418)
 scale = Vector2(2, 2)
-texture = ExtResource("10_tfc43")
+texture = ExtResource("12_yk3u7")
 
 [node name="WaterfallSprites" type="Node2D" parent="."]
 
-[node name="Waterfall" parent="WaterfallSprites" instance=ExtResource("6_sx0ox")]
+[node name="Waterfall" parent="WaterfallSprites" instance=ExtResource("13_uak5w")]
 z_index = 3
 position = Vector2(656, 504)
 
-[node name="Waterfall2" parent="WaterfallSprites" instance=ExtResource("6_sx0ox")]
+[node name="Waterfall2" parent="WaterfallSprites" instance=ExtResource("13_uak5w")]
 z_index = 3
 position = Vector2(688, 504)
 
-[node name="Waterfall3" parent="WaterfallSprites" instance=ExtResource("6_sx0ox")]
+[node name="Waterfall3" parent="WaterfallSprites" instance=ExtResource("13_uak5w")]
 z_index = 3
 position = Vector2(656, 552)
 
-[node name="Waterfall4" parent="WaterfallSprites" instance=ExtResource("6_sx0ox")]
+[node name="Waterfall4" parent="WaterfallSprites" instance=ExtResource("13_uak5w")]
 z_index = 3
 position = Vector2(688, 552)
 
-[node name="Waterfall5" parent="WaterfallSprites" instance=ExtResource("6_sx0ox")]
+[node name="Waterfall5" parent="WaterfallSprites" instance=ExtResource("13_uak5w")]
 z_index = 3
 position = Vector2(688, 600)
 
-[node name="Waterfall6" parent="WaterfallSprites" instance=ExtResource("6_sx0ox")]
+[node name="Waterfall6" parent="WaterfallSprites" instance=ExtResource("13_uak5w")]
 z_index = 3
 position = Vector2(656, 600)
 
-[node name="WaterSplash" parent="WaterfallSprites" instance=ExtResource("12_qs5g6")]
+[node name="WaterSplash" parent="WaterfallSprites" instance=ExtResource("14_m0lyq")]
 z_index = 4
 position = Vector2(656, 608)
 
-[node name="WaterSplash2" parent="WaterfallSprites" instance=ExtResource("12_qs5g6")]
+[node name="WaterSplash2" parent="WaterfallSprites" instance=ExtResource("14_m0lyq")]
 z_index = 4
 position = Vector2(688, 608)
 
-[node name="MushEnemy" parent="." instance=ExtResource("13_60fyk")]
+[node name="MushEnemy" parent="." instance=ExtResource("15_jyoca")]
 z_index = 4
 position = Vector2(973, 432)
 
-[node name="Checkpoint" parent="." instance=ExtResource("14_l584t")]
+[node name="Checkpoint" parent="." instance=ExtResource("16_scx7f")]
 z_index = 4
 position = Vector2(154, 365)
 
@@ -325,7 +312,7 @@ offset_right = 365.0
 offset_bottom = 115.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("5_mcf23")
+theme_override_fonts/font = ExtResource("6_l3xbv")
 text = "THIS WILL DELETE ALL PROGRESS
 ARE YOU SURE?"
 horizontal_alignment = 1
@@ -336,7 +323,7 @@ offset_left = 477.0
 offset_top = 347.0
 offset_right = 576.0
 offset_bottom = 394.0
-theme_override_fonts/font = ExtResource("5_mcf23")
+theme_override_fonts/font = ExtResource("6_l3xbv")
 
 [node name="Label" type="Label" parent="ConfirmationWindow/Yes"]
 layout_mode = 0
@@ -346,7 +333,7 @@ offset_bottom = 48.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("5_mcf23")
+theme_override_fonts/font = ExtResource("6_l3xbv")
 text = "YES"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -356,7 +343,7 @@ offset_left = 628.0
 offset_top = 346.0
 offset_right = 727.0
 offset_bottom = 393.0
-theme_override_fonts/font = ExtResource("5_mcf23")
+theme_override_fonts/font = ExtResource("6_l3xbv")
 
 [node name="Label2" type="Label" parent="ConfirmationWindow/No"]
 layout_mode = 0
@@ -367,14 +354,63 @@ offset_bottom = 49.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("5_mcf23")
+theme_override_fonts/font = ExtResource("6_l3xbv")
 text = "NO"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="CreditButton2" to="." method="_on_credit_button_2_pressed"]
-[connection signal="pressed" from="ConfirmationWindow/Yes" to="." method="_on_yes_pressed"]
-[connection signal="pressed" from="ConfirmationWindow/No" to="." method="_on_no_pressed"]
+[node name="Credits" type="Label" parent="."]
+z_index = 6
+layout_mode = 0
+offset_left = 332.0
+offset_top = 211.0
+offset_right = 800.0
+offset_bottom = 418.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("17_67tfl")
+theme_override_font_sizes/font_size = 32
+text = "Developed by Hassan Ibrahim
+
+Made with Godot Engine
+
+Art and Asset pack by: 
+o_lobsteron Itch.io"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GitHubButton" type="TextureButton" parent="."]
+z_index = 6
+layout_mode = 0
+offset_left = 350.0
+offset_top = 560.0
+offset_right = 866.0
+offset_bottom = 1072.0
+scale = Vector2(0.155, 0.155)
+texture_normal = ExtResource("18_bmmqe")
+
+[node name="AssetButton" type="TextureButton" parent="."]
+z_index = 6
+layout_mode = 0
+offset_left = 1059.0
+offset_top = 567.0
+offset_right = 1859.0
+offset_bottom = 1287.0
+scale = Vector2(0.085, 0.085)
+texture_normal = ExtResource("19_cnmna")
+
+[node name="ItchPage" type="TextureButton" parent="."]
+z_index = 6
+layout_mode = 0
+offset_left = 430.0
+offset_top = 570.0
+offset_right = 1230.0
+offset_bottom = 1290.0
+scale = Vector2(0.085, 0.085)
+texture_normal = ExtResource("19_cnmna")
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="GitHubButton" to="." method="_on_git_hub_button_pressed"]
+[connection signal="pressed" from="AssetButton" to="." method="_on_asset_button_pressed"]
+[connection signal="pressed" from="ItchPage" to="." method="_on_itch_page_pressed"]

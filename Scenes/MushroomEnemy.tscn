@@ -410,4 +410,4 @@ collision_layer = 0
 position = Vector2(0, -14)
 shape = SubResource("CircleShape2D_xqtj8")
 
-[connection signal="body_entered" from="HurtBox" to="MushFSM/MushPatrol" method="_on_hurt_box_body_entered"]
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

@@ -154,7 +154,7 @@ chest_id = "0"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3nd41")
-animation = &"Open"
+animation = &"Default"
 autoplay = "Default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

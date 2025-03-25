@@ -1,0 +1,125 @@
+[gd_scene load_steps=3 format=3 uid="uid://c37mrcva8yu26"]
+
+[ext_resource type="Texture2D" uid="uid://bli3gwj0pglt0" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/background.png" id="1_g1b81"]
+[ext_resource type="Texture2D" uid="uid://c4ca0bnokanl5" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_2.png" id="2_7446n"]
+
+[node name="MovingBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(0, 73)
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Background" type="Sprite2D" parent="ParallaxLayer"]
+z_index = -1
+position = Vector2(81, -17)
+scale = Vector2(2, 2)
+texture = ExtResource("1_g1b81")
+
+[node name="Background2" type="Sprite2D" parent="ParallaxLayer"]
+z_index = -1
+position = Vector2(561, -17)
+scale = Vector2(2, 2)
+texture = ExtResource("1_g1b81")
+
+[node name="Background3" type="Sprite2D" parent="ParallaxLayer"]
+z_index = -1
+position = Vector2(1041, -17)
+scale = Vector2(2, 2)
+texture = ExtResource("1_g1b81")
+
+[node name="Background4" type="Sprite2D" parent="ParallaxLayer"]
+z_index = -1
+position = Vector2(1521, -17)
+scale = Vector2(2, 2)
+texture = ExtResource("1_g1b81")
+
+[node name="Background5" type="Sprite2D" parent="ParallaxLayer"]
+z_index = -1
+position = Vector2(2001, -17)
+scale = Vector2(2, 2)
+texture = ExtResource("1_g1b81")
+
+[node name="Background6" type="Sprite2D" parent="ParallaxLayer"]
+z_index = -1
+position = Vector2(2481, -17)
+scale = Vector2(2, 2)
+texture = ExtResource("1_g1b81")
+
+[node name="Background7" type="Sprite2D" parent="ParallaxLayer"]
+z_index = -1
+position = Vector2(2961, -17)
+scale = Vector2(2, 2)
+texture = ExtResource("1_g1b81")
+
+[node name="Background8" type="Sprite2D" parent="ParallaxLayer"]
+z_index = -1
+position = Vector2(3441, -17)
+scale = Vector2(2, 2)
+texture = ExtResource("1_g1b81")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(-38, 134)
+texture = ExtResource("2_7446n")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(202, 134)
+texture = ExtResource("2_7446n")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(442, 134)
+texture = ExtResource("2_7446n")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(682, 134)
+texture = ExtResource("2_7446n")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(922, 134)
+texture = ExtResource("2_7446n")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1162, 134)
+texture = ExtResource("2_7446n")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1402, 134)
+texture = ExtResource("2_7446n")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1642, 134)
+texture = ExtResource("2_7446n")
+
+[node name="Sprite2D9" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1882, 134)
+texture = ExtResource("2_7446n")
+
+[node name="Sprite2D10" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(2122, 134)
+texture = ExtResource("2_7446n")
+
+[node name="Sprite2D11" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(2362, 134)
+texture = ExtResource("2_7446n")
+
+[node name="Sprite2D12" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(2602, 134)
+texture = ExtResource("2_7446n")
+
+[node name="Sprite2D13" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(2842, 134)
+texture = ExtResource("2_7446n")
+
+[node name="Sprite2D14" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(3082, 134)
+texture = ExtResource("2_7446n")
+
+[node name="Sprite2D15" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(3322, 134)
+texture = ExtResource("2_7446n")
+
+[node name="Sprite2D16" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(3562, 134)
+texture = ExtResource("2_7446n")

@@ -53,3 +53,9 @@ func take_damage(damage):
 func reset():
 	fsm.change_state("BFlyPatrol")
 	health = max_health
+
+
+func _on_hit_box_body_entered(body):
+	if body.is_in_group("player"):
+		body.take_damage(1)
+		body.velocity = (body.global_position - global_position).normalized() * Vector2(300, 800)

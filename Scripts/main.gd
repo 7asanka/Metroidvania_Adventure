@@ -37,3 +37,7 @@ func setup_signals():
 
 	# Connect player to respawn method
 	player.respawn_requested.connect(SaveManager.respawn_player.bind())
+
+
+func _on_demo_over_trigger_body_entered(body):
+	get_tree().change_scene_to_file("res://Scenes/demo_over_screen.tscn")

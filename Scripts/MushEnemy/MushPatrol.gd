@@ -30,7 +30,4 @@ func physics_update(delta):
 	object.velocity.x = direction * SPEED
 	object.move_and_slide()
 
-func _on_hurt_box_body_entered(body):
-	if body.is_in_group("player"):
-		print("enemy hit player")
-		body.take_damage(1)
+

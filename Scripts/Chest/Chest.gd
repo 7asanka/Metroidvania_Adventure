@@ -2,6 +2,9 @@ extends Area2D
 
 @export var ability_name: String = "double_jump"
 @export var chest_id: String  # Unique ID for each chest
+@export var chest_message: String = "Chest Opened"
+@export var flip_sprite_h: bool
+
 
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
@@ -11,7 +14,12 @@ var is_open = false
 
 func _ready():
 	label.visible = false
+	label.text = chest_message
 	label.text = label.text.to_upper()
+	
+	#flip the sprite base on the flip sprite vairable
+	animated_sprite_2d.flip_h = flip_sprite_h
+	
 	# Load chest state from SaveManager
 	is_open = SaveManager.chests.get(chest_id, false)
 
@@ -21,10 +29,6 @@ func _ready():
 		collision_shape_2d.queue_free()
 	else:
 		animated_sprite_2d.play("Default")
-
-func _on_body_entered(body):
-	if body.is_in_group("player") and not is_open:
-		open_chest(body)
 
 func open_chest(player):
 	animated_sprite_2d.play("Open")
@@ -44,3 +48,10 @@ func open_chest(player):
 
 	await get_tree().create_timer(3).timeout
 	label.visible = false
+
+func _on_body_entered(body):
+	if body.is_in_group("player") and not is_open:
+		open_chest(body)
+		
+func _on_body_exited(body):
+	pass

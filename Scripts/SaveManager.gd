@@ -40,6 +40,7 @@ func load_game():
 
 func reset_save():
 	if FileAccess.file_exists(SAVE_FILE):
+		player_data["last_checkpoint"] = Vector2.ZERO
 		DirAccess.remove_absolute(SAVE_FILE)
 		print("⚠ Save file deleted! Starting a new game.")
 		
